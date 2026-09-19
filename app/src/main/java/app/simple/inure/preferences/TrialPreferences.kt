@@ -8,7 +8,8 @@ import java.util.Date
 @Suppress("NOTHING_TO_INLINE", "UseKtx")
 object TrialPreferences {
 
-    const val MAX_TRIAL_DAYS = 0xF
+    // Trial mode removed: the GitHub/FOSS build is permanently unlocked.
+    const val MAX_TRIAL_DAYS = 0
 
     private const val FIRST_LAUNCH = "first_launch_"
     const val IS_APP_FULL_VERSION_ENABLED = "is_full_version_"
@@ -31,44 +32,22 @@ object TrialPreferences {
 
     // ---------------------------------------------------------------------------------------------------------- //
 
-    fun getDaysLeft(): Int {
-        return kotlin.runCatching {
-            MAX_TRIAL_DAYS - CalendarUtils.getDaysBetweenTwoDates(Date(getFirstLaunchDate()), CalendarUtils.getToday())
-                .coerceAtLeast(0).coerceAtMost(MAX_TRIAL_DAYS)
-        }.getOrElse {
-            -1
-        }
-    }
+    fun getDaysLeft(): Int = 0
 
-    fun getMaxDays(): Int {
-        return MAX_TRIAL_DAYS
-    }
+    fun getMaxDays(): Int = 0
 
     // ---------------------------------------------------------------------------------------------------------- //
 
 
-    fun setFullVersion(value: Boolean): Boolean {
-        return SharedPreferences.getEncryptedSharedPreferences().edit()
-            .putBoolean(IS_APP_FULL_VERSION_ENABLED, value).commit()
-    }
+    fun setFullVersion(value: Boolean): Boolean = true
 
-    inline fun isAppFullVersionEnabled(): Boolean {
-        return SharedPreferences.getEncryptedSharedPreferences().getBoolean(IS_APP_FULL_VERSION_ENABLED, false) ||
-                CalendarUtils.getDaysBetweenTwoDates(Date(getFirstLaunchDate()), CalendarUtils.getToday()) <= MAX_TRIAL_DAYS
-    }
+    inline fun isAppFullVersionEnabled(): Boolean = true
 
-    fun isWithinTrialPeriod(): Boolean {
-        return CalendarUtils.getDaysBetweenTwoDates(Date(getFirstLaunchDate()), CalendarUtils.getToday()) <= MAX_TRIAL_DAYS
-    }
+    fun isWithinTrialPeriod(): Boolean = false
 
-    fun isTrialWithoutFull(): Boolean {
-        return CalendarUtils.getDaysBetweenTwoDates(Date(getFirstLaunchDate()), CalendarUtils.getToday()) <= MAX_TRIAL_DAYS
-                && !isAppFullVersionEnabled()
-    }
+    fun isTrialWithoutFull(): Boolean = false
 
-    fun isFullVersion(): Boolean {
-        return SharedPreferences.getEncryptedSharedPreferences().getBoolean(IS_APP_FULL_VERSION_ENABLED, false)
-    }
+    fun isFullVersion(): Boolean = true
 
     // ---------------------------------------------------------------------------------------------------------- //
 

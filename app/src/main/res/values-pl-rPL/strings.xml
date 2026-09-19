@@ -557,8 +557,6 @@
     <string name="failed_to_activate_full_version">Nie udało się aktywować pełnej wersji!</string>
     <string name="full_version_already_activated">Pełna wersja już aktywna</string>
     <string name="this_feature_is_only_available_in_full_version">Twój 14-dniowy okres próbny dobiegł końca.\nUlepsz teraz, aby nadal korzystać ze wszystkich funkcji aplikacji.</string>
-    <string name="days_trial_period_remaining">Pozostało %1$d dni okresu próbnego.</string>
-    <string name="purchase">Zakup</string>
     <string name="recently_added">Ostatnio dodane</string>
     <string name="boot_manager">Menedżer rozruchu</string>
     <string name="disable_all">Wyłącz wszystkie</string>
@@ -603,8 +601,6 @@
     <string name="dangerous_permission_info">Ze względu na ograniczenia Androida, można zmienić status tylko niebezpiecznych uprawnień.</string>
     <string name="dont_show_again">Nie pokazuj ponownie</string>
     <string name="date">Data</string>
-    <string name="trial_info">Informacje o wersji próbnej</string>
-    <string name="desc_trial">Inure App Manager oferuje pełny dostęp do aplikacji za darmo przez 15 dni. Po tym czasie te funkcje będą wymagały aktywacji Unlockera.</string>
     <string name="use_shizuku">Tryb Shizuku</string>
     <string name="shizuku_desc">Użyj API Shizuku zamiast natywnych API Androida i bibliotek do wykonywania niektórych funkcji.\n\nTa opcja jest zalecana dla użytkowników bez roota.\n\nWymagany jest dostęp Shizuku.</string>
     <string name="shizuku_alert">Jeśli przyznano dostęp root i tryb root jest włączony w aplikacji, tryb root będzie preferowany nad Shizuku.</string>
@@ -781,7 +777,6 @@
     <string name="desc_disable_animations">Całkowicie wyłącz animacje aplikacji.</string>
     <string name="add_vote_desc">Dotknij przycisku, aby dodać swój głos.</string>
     <string name="relevance">Trafność</string>
-    <string name="one_time_purchase">Jednorazowy zakup. Dożywotni dostęp.</string>
     <string name="allow">Zezwól</string>
     <string name="deny">Odmów</string>
     <string name="ignore">Ignoruj</string>

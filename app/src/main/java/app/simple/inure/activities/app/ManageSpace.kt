@@ -15,7 +15,6 @@ import app.simple.inure.R
 import app.simple.inure.decorations.ripple.DynamicRippleTextView
 import app.simple.inure.decorations.typeface.TypeFaceTextView
 import app.simple.inure.decorations.views.CustomProgressBar
-import app.simple.inure.dialogs.app.FullVersion.Companion.showFullVersion
 import app.simple.inure.dialogs.miscellaneous.Warning
 import app.simple.inure.extensions.activities.BaseActivity
 import app.simple.inure.preferences.AppearancePreferences
@@ -156,40 +155,31 @@ class ManageSpace : BaseActivity() {
         }
 
         import.setOnClickListener {
-            if (TrialPreferences.isFullVersion()) {
-                kotlin.runCatching {
-                    appDataLoader.visible(animate = true)
-                    pickedFile.launch("application/*")
-                }.onFailure {
-                    appDataLoader.gone(animate = true)
-                    showWarning(it.message ?: "Unknown error", false)
-                }
-            } else {
-                supportFragmentManager.showFullVersion()
+            kotlin.runCatching {
+                appDataLoader.visible(animate = true)
+                pickedFile.launch("application/*")
+            }.onFailure {
+                appDataLoader.gone(animate = true)
+                showWarning(it.message ?: "Unknown error", false)
             }
         }
 
         export.setOnClickListener {
-            if (TrialPreferences.isFullVersion()) {
-                appDataLoader.visible(animate = true)
-                lifecycleScope.launch(Dispatchers.IO) {
-                    kotlin.runCatching {
-                        val exportPath = applicationContext.exportAppData()
-
-                        withContext(Dispatchers.Main) {
-                            filePath = exportPath
-                            exportData.launch(exportPath.substringAfterLast("/"))
-                            appDataLoader.gone(animate = true)
-                        }
-                    }.onFailure {
-                        withContext(Dispatchers.Main) {
-                            appDataLoader.gone(animate = true)
-                            showWarning(it.message ?: "Unknown error", false)
-                        }
+            appDataLoader.visible(animate = true)
+            lifecycleScope.launch(Dispatchers.IO) {
+                kotlin.runCatching {
+                    val exportPath = applicationContext.exportAppData()
+                    withContext(Dispatchers.Main) {
+                        filePath = exportPath
+                        exportData.launch(exportPath.substringAfterLast("/"))
+                        appDataLoader.gone(animate = true)
+                    }
+                }.onFailure {
+                    withContext(Dispatchers.Main) {
+                        appDataLoader.gone(animate = true)
+                        showWarning(it.message ?: "Unknown error", false)
                     }
                 }
-            } else {
-                supportFragmentManager.showFullVersion()
             }
         }
 

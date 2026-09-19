@@ -205,10 +205,6 @@ class Home : ScopedFragment() {
                         R.string.menus -> {
                             childFragmentManager.showHomeMenu()
                         }
-
-                        R.string.purchase -> {
-                            openFragmentSlide(Trial.newInstance(), Trial.TAG)
-                        }
                     }
                 }
             })

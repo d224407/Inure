@@ -557,8 +557,6 @@
     <string name="failed_to_activate_full_version">فشل تفعيل النسخة الكاملة!</string>
     <string name="full_version_already_activated">النسخة الكاملة مفعلة بالفعل</string>
     <string name="this_feature_is_only_available_in_full_version">انتهت الفترة التجريبية.\nقم بالترقية الآن لمواصلة استخدام كافة ميزات التطبيق.</string>
-    <string name="days_trial_period_remaining">متبقي %1$d أيام في الفترة التجريبية.</string>
-    <string name="purchase">شراء</string>
     <string name="recently_added">أُضيف مؤخراً</string>
     <string name="boot_manager">مدير الإقلاع</string>
     <string name="disable_all">تعطيل الكل</string>
@@ -603,8 +601,6 @@
     <string name="dangerous_permission_info">نظراً لقيود أندرويد، لا يمكن تغيير حالة الإذن إلا إذا كان من الأذونات الخطيرة.</string>
     <string name="dont_show_again">لا تظهر هذا مجدداً</string>
     <string name="date">التاريخ</string>
-    <string name="trial_info">معلومات الفترة التجريبية</string>
-    <string name="desc_trial">يوفر Inure App Manager وصولاً كاملاً إلى التطبيق مجاناً لمدة 15 يوماً. بعد ذلك ستتطلب هذه الميزات تفعيل حزمة الـ Unlocker.</string>
     <string name="use_shizuku">وضع شيزوكو</string>
     <string name="shizuku_desc">استخدام واجهة برمجة تطبيقات Shizuku بدلاً من استخدام واجهات برمجة تطبيقات ومكتبات أندرويد الأصلية لأداء بعض الوظائف.\n\nيُنصح بهذا الخيار للمستخدمين الذين لا يمتلكون صلاحيات الروت.\n\nيتطلب تفعيل خدمة Shizuku.</string>
     <string name="shizuku_alert">إذا تم منح صلاحيات الجذر وتفعيل وضع الروت في التطبيق، ستكون الأولوية لوضع الروت على Shizuku.</string>
@@ -783,7 +779,6 @@
     <string name="desc_disable_animations">تعطيل كافة الرسوم المتحركة في التطبيق بالكامل.</string>
     <string name="add_vote_desc">اضغط على الزر لإضافة تصويتك.</string>
     <string name="relevance">الصلة</string>
-    <string name="one_time_purchase">شراء لمرة واحدة. وصول مدى الحياة.</string>
     <string name="allow">السماح</string>
     <string name="deny">الرفض</string>
     <string name="ignore">تجاهل</string>

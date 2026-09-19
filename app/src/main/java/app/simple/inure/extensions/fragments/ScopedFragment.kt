@@ -31,7 +31,6 @@ import app.simple.inure.apk.utils.PackageUtils
 import app.simple.inure.constants.BundleConstants
 import app.simple.inure.decorations.transitions.DetailsTransitionArc
 import app.simple.inure.decorations.views.FloatingMenuRecyclerView
-import app.simple.inure.dialogs.app.FullVersion.Companion.showFullVersion
 import app.simple.inure.dialogs.app.Sure.Companion.newSureInstance
 import app.simple.inure.dialogs.miscellaneous.Error.Companion.showError
 import app.simple.inure.dialogs.miscellaneous.Loader
@@ -354,29 +353,12 @@ abstract class ScopedFragment : Fragment(), SharedPreferences.OnSharedPreference
     }
 
     @Suppress("NOTHING_TO_INLINE")
-    inline fun fullVersionCheck(goBack: Boolean = true): Boolean {
-        return if (TrialPreferences.isAppFullVersionEnabled()) {
-            true
-        } else {
-            childFragmentManager.showFullVersion().setFullVersionCallbacks {
-                if (goBack) {
-                    requireActivity().onBackPressedDispatcher.onBackPressed()
-                }
-            }
-            false
-        }
+    fun fullVersionCheck(goBack: Boolean = true): Boolean {
+        return true
     }
 
     open fun fullVersionCheck(onClose: () -> Unit): Boolean {
-        return if (TrialPreferences.isAppFullVersionEnabled()) {
-            true
-        } else {
-            childFragmentManager.showFullVersion().setFullVersionCallbacks {
-                onClose()
-            }
-
-            false
-        }
+        return true
     }
 
     @Throws(IllegalStateException::class)

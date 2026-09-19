@@ -220,7 +220,7 @@ class AppInfo : ScopedFragment() {
         }
 
         if (ConfigurationPreferences.isRootOrShizuku()) {
-            if (TrialPreferences.isFullVersion() || TrialPreferences.isWithinTrialPeriod()) {
+            if (TrialPreferences.isAppFullVersionEnabled()) {
                 batteryOptimization.visible(animate = false)
                 divider1.visible(animate = false)
 

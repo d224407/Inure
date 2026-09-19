@@ -558,8 +558,6 @@
     <string name="failed_to_activate_full_version">Impossible d\'activer la version complète !</string>
     <string name="full_version_already_activated">La version complète est déjà activée</string>
     <string name="this_feature_is_only_available_in_full_version">Cette fonctionnalité est uniquement disponible en version complète.</string>
-    <string name="days_trial_period_remaining">Il reste %1$d jours avant la période d\'essai.</string>
-    <string name="purchase">Acheter</string>
     <string name="recently_added">Récemment Ajouté</string>
     <string name="boot_manager">Gestionnaire de démarrage</string>
     <string name="disable_all">Tout désactiver</string>
@@ -604,8 +602,6 @@
     <string name="dangerous_permission_info">En raison de la limitation d\'Android, seul le statut de permission dangereuse peut être changé.</string>
     <string name="dont_show_again">Ne plus visualiser</string>
     <string name="date">Date</string>
-    <string name="trial_info">Information d\'essai</string>
-    <string name="desc_trial">Inure App Manager offre un accès complet à l\'application gratuitement pendant 15 jours. Après cela, ces fonctionnalités nécessiteront l\'activation de Unlocker.</string>
     <string name="use_shizuku">Shizuku Mode</string>
     <string name="shizuku_desc">Utilisez l\'API Shizuku au lieu d\'utiliser des API et des Libs Android natifs pour exécuter certaines fonctions.\n\nCette option est recommandée pour les utilisateurs non roots.\n\nL\'accès à Shizuku est requis.</string>
     <string name="shizuku_alert">Si l\'accès root est accordé et que le mode root est basculé dans l\'application, le mode root sera préféré à Shizuku.</string>
@@ -784,7 +780,6 @@
     <string name="desc_disable_animations">Désactivez complètement les animations de l\'application.</string>
     <string name="add_vote_desc">Appuyez sur le bouton pour ajouter votre vote.</string>
     <string name="relevance">Pertinence</string>
-    <string name="one_time_purchase">Achat unique. Accès à vie.</string>
     <string name="allow">Autoriser</string>
     <string name="deny">Refuser</string>
     <string name="ignore">Ignorer</string>

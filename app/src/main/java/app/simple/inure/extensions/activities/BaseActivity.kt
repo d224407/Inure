@@ -41,7 +41,6 @@ import app.simple.inure.decorations.ime.HeightDeferringInsetsAnimationCallback
 import app.simple.inure.decorations.ime.RootViewDeferringInsetsCallback
 import app.simple.inure.decorations.ime.TranslateDeferringInsetsAnimationCallback
 import app.simple.inure.decorations.transitions.compat.DetailsTransitionArc
-import app.simple.inure.dialogs.app.FullVersion.Companion.showFullVersion
 import app.simple.inure.dialogs.app.Sure.Companion.newSureInstance
 import app.simple.inure.dialogs.miscellaneous.Error.Companion.showError
 import app.simple.inure.dialogs.miscellaneous.Loader
@@ -446,25 +445,11 @@ open class BaseActivity : AppCompatActivity(),
     }
 
     open fun fullVersionCheck(): Boolean {
-        return if (TrialPreferences.isAppFullVersionEnabled()) {
-            true
-        } else {
-            supportFragmentManager.showFullVersion().setFullVersionCallbacks {
-                onBackPressedDispatcher.onBackPressed()
-            }
-            false
-        }
+        return true
     }
 
     open fun fullVersionCheck(function: () -> Unit): Boolean {
-        return if (TrialPreferences.isAppFullVersionEnabled()) {
-            true
-        } else {
-            supportFragmentManager.showFullVersion().setFullVersionCallbacks {
-                function()
-            }
-            false
-        }
+        return true
     }
 
     open fun showLoader() {

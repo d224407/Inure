@@ -557,8 +557,6 @@
     <string name="failed_to_activate_full_version">Gagal mengaktifkan versi lengkap!</string>
     <string name="full_version_already_activated">Versi lengkap sudah aktif</string>
     <string name="this_feature_is_only_available_in_full_version">Fitur ini hanya tersedia di versi lengkap.</string>
-    <string name="days_trial_period_remaining">%1$d hari tersisa di masa percobaan.</string>
-    <string name="purchase">Beli</string>
     <string name="recently_added">Baru Ditambahkan</string>
     <string name="boot_manager">Manajer Booting</string>
     <string name="disable_all">Nonaktifkan Semua</string>
@@ -603,8 +601,6 @@
     <string name="dangerous_permission_info">Karena keterbatasan Android, Hanya status izin berbahaya yang dapat diubah.</string>
     <string name="dont_show_again">Jangan Tampilkan Lagi</string>
     <string name="date">Kencan</string>
-    <string name="trial_info">Informasi Uji Coba</string>
-    <string name="desc_trial">Inure App Manager menawarkan akses penuh ke aplikasi secara gratis selama 15 hari. Setelah itu, fitur-fitur ini memerlukan Unlocker untuk diaktifkan.</string>
     <string name="use_shizuku">Shizuku Mode</string>
     <string name="shizuku_desc">Gunakan Shizuku API daripada menggunakan API dan Lib Android asli untuk menjalankan beberapa fungsi.\n\nOpsi ini direkomendasikan untuk pengguna non-root.\n\nAkses Shizuku diperlukan.</string>
     <string name="shizuku_alert">Jika akses root diberikan dan mode root diaktifkan di aplikasi, maka mode root akan lebih diutamakan daripada Shizuku.</string>
@@ -783,7 +779,6 @@
     <string name="desc_disable_animations">Nonaktifkan animasi aplikasi sepenuhnya.</string>
     <string name="add_vote_desc">Ketuk tombol untuk menambahkan suara Anda.</string>
     <string name="relevance">Relevansi</string>
-    <string name="one_time_purchase">Pembelian satu kali. Akses seumur hidup.</string>
     <string name="allow">Izinkan</string>
     <string name="deny">Tolak</string>
     <string name="ignore">Abaikan</string>

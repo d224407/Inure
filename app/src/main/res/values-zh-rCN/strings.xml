@@ -559,8 +559,6 @@
     <string name="failed_to_activate_full_version">无法激活完整版!</string>
     <string name="full_version_already_activated">已经激活过完整版</string>
     <string name="this_feature_is_only_available_in_full_version">此功能仅在完整版中可用.</string>
-    <string name="days_trial_period_remaining">试用期还剩 %1$d 天.</string>
-    <string name="purchase">购买</string>
     <string name="recently_added">最近添加</string>
     <string name="boot_manager">Boot Manager</string>
     <string name="disable_all">全部关闭</string>
@@ -605,8 +603,6 @@
     <string name="dangerous_permission_info">由于Android 的限制，只能更改危险权限的状态</string>
     <string name="dont_show_again">不再显示</string>
     <string name="date">日期</string>
-    <string name="trial_info">试用信息</string>
-    <string name="desc_trial">Inure App Manager提供15天免费访问该应用程序的完整权限.到期后,这些功能将需要激活解锁器.</string>
     <string name="use_shizuku">Shizuku 模式</string>
     <string name="shizuku_desc">使用 Shizuku API 而不是使用本机 Android API 和库来执行某些功能.\n\n建议非 root 用户使用此选项.\n\n需要 Shizuku 访问权限.</string>
     <string name="shizuku_alert">如果授予root权限, 并在应用程序中切换至root 模式, 那么Root模式将优先于Shizuku</string>
@@ -785,7 +781,6 @@
     <string name="desc_disable_animations">完全禁用应用程序动画。</string>
     <string name="add_vote_desc">点击按钮添加您的投票。</string>
     <string name="relevance">相关性</string>
-    <string name="one_time_purchase">一次性购买。终身访问。</string>
     <string name="allow">允许</string>
     <string name="deny">拒绝</string>
     <string name="ignore">忽略</string>

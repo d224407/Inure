@@ -85,18 +85,10 @@ class AdapterHome(private val list: List<Pair<Int, Int>>) : RecyclerView.Adapter
                 adapterHomeMenuCallbacks.onMenuItemClicked(list[position].second, holder.icon)
             }
         } else if (holder is Header) {
-            if (TrialPreferences.isFullVersion()) {
-                holder.trial.visibility = View.GONE
-            } else {
-                holder.trial.visibility = View.VISIBLE
-            }
+            holder.trial.visibility = View.GONE
 
             holder.appIcon.setOnClickListener {
                 adapterHomeMenuCallbacks.onMenuItemClicked(R.string.app_name, holder.appIcon)
-            }
-
-            holder.trial.setOnClickListener {
-                adapterHomeMenuCallbacks.onMenuItemClicked(R.string.purchase, holder.trial)
             }
 
             holder.search.setOnClickListener {

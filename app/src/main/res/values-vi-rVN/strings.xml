@@ -557,8 +557,6 @@
     <string name="failed_to_activate_full_version">Không thể kích hoạt phiên bản đầy đủ!</string>
     <string name="full_version_already_activated">Phiên bản đầy đủ đã được kích hoạt</string>
     <string name="this_feature_is_only_available_in_full_version">Tính năng này chỉ có sẵn trong phiên bản đầy đủ.</string>
-    <string name="days_trial_period_remaining">%1$d Ngày còn lại trong thời gian thử nghiệm.</string>
-    <string name="purchase">Mua</string>
     <string name="recently_added">Gần đây được thêm vào</string>
     <string name="boot_manager">Trình quản lý khởi động</string>
     <string name="disable_all">Tắt tất cả</string>
@@ -603,8 +601,6 @@
     <string name="dangerous_permission_info">Do giới hạn của Android, chỉ có thể thay đổi trạng thái cho phép nguy hiểm.</string>
     <string name="dont_show_again">Đừng hiển thị một lần nữa</string>
     <string name="date">Ngày</string>
-    <string name="trial_info">Thông tin dùng thử</string>
-    <string name="desc_trial">Trình quản lý ứng dụng Inure cung cấp quyền truy cập đầy đủ vào ứng dụng miễn phí trong 15 ngày. Sau đó, các tính năng này sẽ yêu cầu mở khóa để được kích hoạt.</string>
     <string name="use_shizuku">Chế độ Shizuku</string>
     <string name="shizuku_desc">Sử dụng API Shizuku thay vì sử dụng API Android và LIB gốc để thực hiện một số chức năng. \nnthis được khuyến nghị cho người dùng không root. \nnshizuku truy cập là bắt buộc.</string>
     <string name="shizuku_alert">Nếu quyền truy cập gốc được cấp và chế độ gốc được bật trong ứng dụng, thì chế độ gốc sẽ được ưu tiên hơn Shizuku.</string>
@@ -783,7 +779,6 @@
     <string name="desc_disable_animations">Tắt hoàn toàn hoạt ảnh của ứng dụng.</string>
     <string name="add_vote_desc">Nhấn vào nút để thêm phiếu bầu của bạn.</string>
     <string name="relevance">Mức độ liên quan</string>
-    <string name="one_time_purchase">Mua một lần. Truy cập trọn đời.</string>
     <string name="allow">Cho phép</string>
     <string name="deny">Từ chối</string>
     <string name="ignore">Bỏ qua</string>

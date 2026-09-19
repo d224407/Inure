@@ -556,8 +556,6 @@
     <string name="failed_to_activate_full_version">Failed to activate full version!</string>
     <string name="full_version_already_activated">Full version already activated</string>
     <string name="this_feature_is_only_available_in_full_version">Your 14-day trial has ended.\nUpgrade now to continue using all app features.</string>
-    <string name="days_trial_period_remaining">%1$d days left in trial period.</string>
-    <string name="purchase">Purchase</string>
     <string name="recently_added">Recently Added</string>
     <string name="boot_manager">Boot Manager</string>
     <string name="disable_all">Disable All</string>
@@ -602,8 +600,6 @@
     <string name="dangerous_permission_info">Due to Android\'s limitation, Only dangerous permission\'s status can be changed.</string>
     <string name="dont_show_again">Don\'t Show Again</string>
     <string name="date">Date</string>
-    <string name="trial_info">Trial Information</string>
-    <string name="desc_trial">Inure App Manager offers full access to the app for free for 15 days. After that these features will require Unlocker to be activated.</string>
     <string name="use_shizuku">Shizuku Mode</string>
     <string name="shizuku_desc">Use Shizuku API instead of using native Android APIs and Libs to perform some functions.\n\nThis option is recommended for non-root users.\n\nShizuku access is required.</string>
     <string name="shizuku_alert">If root access is granted and root mode is toggled in the app, then root mode will be preferred over Shizuku.</string>
@@ -782,7 +778,6 @@
     <string name="desc_disable_animations">Disable app animations completely.</string>
     <string name="add_vote_desc">Tap the button to add your vote.</string>
     <string name="relevance">Relevance</string>
-    <string name="one_time_purchase">One-time purchase. Lifetime access.</string>
     <string name="allow">Allow</string>
     <string name="deny">Deny</string>
     <string name="ignore">Ignore</string>

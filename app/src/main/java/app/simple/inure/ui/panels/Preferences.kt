@@ -140,10 +140,6 @@ class Preferences : SearchBarScopedFragment() {
                         R.string.about -> {
                             openFragmentLinear(AboutScreen.newInstance(), imageView, AboutScreen.TAG)
                         }
-
-                        R.string.purchase -> {
-                            openFragmentSlide(Trial.newInstance(), Trial.TAG)
-                        }
                         R.string.other_apps -> {
                             openFragmentLinear(OtherAppsScreen.newInstance(), imageView, OtherAppsScreen.TAG)
                         }
