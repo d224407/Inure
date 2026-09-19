@@ -59,7 +59,7 @@ jobs:
 
       - name: Build Release
         run: |
-          ./gradlew :app:assembleRelease --no-daemon --scan \
+          ./gradlew :app:assembleGithubRelease --no-daemon --scan \
             -Dscan.terms-of-use.agree=yes \
             -Dscan.terms-of-use.url="https://gradle.com/help/legal-terms-of-use"
 
@@ -77,7 +77,7 @@ jobs:
         id: sign
         uses: r0adkll/sign-android-release@v1
         with:
-          releaseDirectory: app/build/outputs/apk/release
+          releaseDirectory: app/build/outputs/apk/github/release
           signingKeyBase64: ${{ secrets.KEYSTORE_BASE64 }}
           alias: ${{ secrets.KEYSTORE_ALIAS }}
           keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
@@ -89,4 +89,5 @@ jobs:
           name: Inure-release
           path: ${{ steps.sign.outputs.signedReleaseFile }}
           if-no-files-found: error
+
           
