@@ -16,6 +16,8 @@ jobs:
     env:
       NDK_VERSION: "29.0.13599879"
       BUILD_TOOLS_VERSION: "35.0.0"
+      ANDROID_HOME: /usr/local/lib/android/sdk
+      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
 
     steps:
       - name: Checkout
@@ -27,6 +29,12 @@ jobs:
           distribution: temurin
           java-version: "17"
           cache: gradle
+
+      - name: Locate sdkmanager
+        run: |
+          SDKMANAGER_PATH=$(find "$ANDROID_HOME/cmdline-tools" -maxdepth 2 -name sdkmanager -type f | sort -V | tail -n 1)
+          echo "Using sdkmanager at: $SDKMANAGER_PATH"
+          echo "$(dirname "$SDKMANAGER_PATH")" >> "$GITHUB_PATH"
 
       - name: Accept SDK licenses
         run: |
