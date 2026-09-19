@@ -59,7 +59,19 @@ jobs:
 
       - name: Build Release
         run: |
-          ./gradlew :app:assembleRelease --no-daemon
+          ./gradlew :app:assembleRelease --no-daemon --scan \
+            -Dscan.terms-of-use.agree=yes \
+            -Dscan.terms-of-use.url="https://gradle.com/help/legal-terms-of-use"
+
+      - name: Upload Gradle build report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradle-build-report
+          path: |
+            app/build/reports/
+            build/reports/
+          if-no-files-found: ignore
 
       - name: Sign APK
         id: sign

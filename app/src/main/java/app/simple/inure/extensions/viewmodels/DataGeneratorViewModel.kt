@@ -507,7 +507,7 @@ open class DataGeneratorViewModel(application: Application) : PackageUtilsViewMo
                 stringBuilder.append("- **Target SDK:** ${apps[app].safeApplicationInfo.targetSdkVersion}\n")
 
             if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.SIZE))
-                stringBuilder.append("- **Size:** ${apps[app].getSize()}\n")**\n")
+                stringBuilder.append("- **Size:** ${apps[app].getSize()}\n")
 
             if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.FDROID))
                 stringBuilder.append("- **[F-Droid](https://f-droid.org/en/packages/${apps[app].packageName})**\n")
