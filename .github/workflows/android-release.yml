@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
 
     env:
@@ -18,48 +18,44 @@ jobs:
       BUILD_TOOLS_VERSION: "35.0.0"
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up JDK 17
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
+          distribution: temurin
           java-version: "17"
-          distribution: "temurin"
           cache: gradle
 
-      - name: Set up Android SDK
+      - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Accept Android SDK licenses
+      - name: Accept SDK licenses
         run: |
           yes | sdkmanager --licenses || true
 
-      - name: Install Android SDK components
+      - name: Install Android SDK
         run: |
           sdkmanager \
             "platform-tools" \
             "build-tools;${BUILD_TOOLS_VERSION}" \
             "ndk;${NDK_VERSION}"
 
-      - name: Verify Android SDK
+      - name: Verify NDK
         run: |
-          sdkmanager --list_installed
-          echo "ANDROID_HOME=$ANDROID_HOME"
-          ls -la "$ANDROID_HOME/ndk/$NDK_VERSION"
+          test -d "$ANDROID_HOME/ndk/${NDK_VERSION}"
+          echo "NDK ${NDK_VERSION} installed successfully"
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
-
-      - name: Grant execute permission for gradlew
+      - name: Grant Gradle permission
         run: chmod +x ./gradlew
 
-      - name: Build unsigned Release APK
+      - name: Build Release
         run: |
           ./gradlew :app:assembleRelease --no-daemon
 
       - name: Sign APK
-        id: sign_apk
+        id: sign
         uses: r0adkll/sign-android-release@v1
         with:
           releaseDirectory: app/build/outputs/apk/release
@@ -67,18 +63,10 @@ jobs:
           alias: ${{ secrets.KEYSTORE_ALIAS }}
           keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
-        env:
-          BUILD_TOOLS_VERSION: ${{ env.BUILD_TOOLS_VERSION }}
-
-      - name: Rename signed APK
-        run: |
-          mkdir -p release
-          cp "${{ steps.sign_apk.outputs.signedReleaseFile }}" \
-             "release/Inure-release-signed.apk"
 
       - name: Upload signed APK
         uses: actions/upload-artifact@v4
         with:
-          name: Inure-release-signed
-          path: release/Inure-release-signed.apk
+          name: Inure-release
+          path: ${{ steps.sign.outputs.signedReleaseFile }}
           if-no-files-found: error
