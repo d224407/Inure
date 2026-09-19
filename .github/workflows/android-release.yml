@@ -28,9 +28,6 @@ jobs:
           java-version: "17"
           cache: gradle
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
       - name: Accept SDK licenses
         run: |
           yes | sdkmanager --licenses || true
@@ -70,3 +67,4 @@ jobs:
           name: Inure-release
           path: ${{ steps.sign.outputs.signedReleaseFile }}
           if-no-files-found: error
+          
