@@ -82,8 +82,6 @@ class Home : ScopedFragment() {
             MainPreferences.setChangeLogReminder(BuildConfig.VERSION_CODE)
         }
 
-        showRateDialog()
-
         homeViewModel.getMenuItems().observe(viewLifecycleOwner) {
             postponeEnterTransition()
             data = it
