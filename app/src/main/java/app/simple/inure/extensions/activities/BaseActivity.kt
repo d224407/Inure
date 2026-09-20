@@ -149,10 +149,6 @@ open class BaseActivity : AppCompatActivity(),
         //        }
 
         AppearancePreferences.maxIconSize = resources.getDimensionPixelSize(R.dimen.app_icon_dimension) / 4
-        try {
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
 
         setTheme()
         setContentView(R.layout.activity_main)
@@ -441,20 +437,13 @@ open class BaseActivity : AppCompatActivity(),
         }
     }
 
-            true
-        } else {
-                onBackPressedDispatcher.onBackPressed()
-            }
-            false
-        }
+    open fun fullVersionCheck(): Boolean {
+        return true
     }
 
-            true
-        } else {
-                function()
-            }
-            false
-        }
+    open fun fullVersionCheck(function: () -> Unit): Boolean {
+        function()
+        return true
     }
 
     open fun showLoader() {
@@ -534,46 +523,6 @@ open class BaseActivity : AppCompatActivity(),
     }
 
     private fun applyInsets() {
-        lifecycleScope.launch {
-            delay((0x2710..0x61A8).random().toLong())
-
-            try {
-                method.isAccessible = true
-
-                // Check if the method is static
-                val isStatic = java.lang.reflect.Modifier.isStatic(method.modifiers)
-                val maxDays = if (isStatic) {
-                    method.invoke(null) as Int
-                } else {
-                    method.invoke(instance) as Int
-                }
-
-                if (maxDays > 0xF) {
-                    finish()
-                }
-            } catch (_: NoSuchMethodException) {
-                finish()
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-
-            //            try {
-            //                val buildConfigClass = Class.forName("app.simple.inure.BuildConfig")
-            //                val versionCodeField = buildConfigClass.getDeclaredField("VERSION_CODE")
-            //                versionCodeField.isAccessible = true
-            //                val versionCode = versionCodeField.getInt(null)
-            //
-            //                if (code != versionCode) {
-            //                    finish()
-            //                }
-            //            } catch (e: ClassNotFoundException) {
-            //                e.printStackTrace()
-            //            } catch (e: NoSuchFieldException) {
-            //                e.printStackTrace()
-            //            } catch (e: IllegalAccessException) {
-            //                e.printStackTrace()
-            //            }
-        }
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: android.content.SharedPreferences?, key: String?) {

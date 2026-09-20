@@ -132,6 +132,9 @@ open class DataGeneratorViewModel(application: Application) : PackageUtilsViewMo
                 stringBuilder.append("\t\t<size>${app.getSize()}</size>\n")
             }
 
+            if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.PLAY_STORE))
+                stringBuilder.append("\t\t<play_store_link>https://play.google.com/store/apps/details?id=${app.packageName}</play_store_link>\n")
+
             if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.FDROID))
                 stringBuilder.append("\t\t<fdroid_link>https://f-droid.org/en/packages/${app.packageName}</fdroid_link>\n")
 
@@ -180,6 +183,9 @@ open class DataGeneratorViewModel(application: Application) : PackageUtilsViewMo
             if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.SIZE)) {
                 stringBuilder.append("${apps[i].getSize()}\n")
             }
+
+            if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.PLAY_STORE))
+                stringBuilder.append("https://play.google.com/store/apps/details?id=${apps[i].packageName}\n")
 
             if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.FDROID))
                 stringBuilder.append("https://f-droid.org/en/packages/${apps[i].packageName}\n")
@@ -233,6 +239,9 @@ open class DataGeneratorViewModel(application: Application) : PackageUtilsViewMo
                     stringBuilder.append("\n\t\t\t\"size\": \"${app.getSize()}\",")
                 }
 
+                if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.PLAY_STORE))
+                    stringBuilder.append("\n\t\t\t\"play_store_link\": \"https://play.google.com/store/apps/details?id=${app.packageName}\",")
+
                 if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.FDROID))
                     stringBuilder.append("\n\t\t\t\"fdroid_link\": \"https://f-droid.org/en/packages/${app.packageName}\",")
 
@@ -284,6 +293,8 @@ open class DataGeneratorViewModel(application: Application) : PackageUtilsViewMo
         if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.SIZE))
             stringBuilder.append("\"Size,\"")
 
+        if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.PLAY_STORE))
+            stringBuilder.append("\"Play Store Link,\"")
 
         if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.FDROID))
             stringBuilder.append("\"F-Droid Link,\"")
@@ -319,6 +330,9 @@ open class DataGeneratorViewModel(application: Application) : PackageUtilsViewMo
 
             if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.SIZE))
                 stringBuilder.append("\"${app.getSize()}\",")
+
+            if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.PLAY_STORE))
+                stringBuilder.append("\"https://play.google.com/store/apps/details?id=${app.packageName}\",")
 
             if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.FDROID))
                 stringBuilder.append("\"https://f-droid.org/en/packages/${app.packageName}\",")
@@ -419,6 +433,9 @@ open class DataGeneratorViewModel(application: Application) : PackageUtilsViewMo
         if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.SIZE))
             stringBuilder.append("\t\t\t<th>Size</th>\r\n")
 
+        if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.PLAY_STORE))
+            stringBuilder.append("\t\t\t<th>Play Store Link</th>\r\n")
+
         if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.FDROID))
             stringBuilder.append("\t\t\t<th>F-Droid Link</th>\r\n")
 
@@ -458,6 +475,9 @@ open class DataGeneratorViewModel(application: Application) : PackageUtilsViewMo
 
             if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.SIZE))
                 stringBuilder.append("\t\t\t<td>${app.getSize()}</td>\r\n")
+
+            if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.PLAY_STORE))
+                stringBuilder.append("\t\t\t<td><a href=\"https://play.google.com/store/apps/details?id=${app.packageName}\">Play Store</a></td>\r\n")
 
             if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.FDROID))
                 stringBuilder.append("\t\t\t<td><a href=\"https://f-droid.org/en/packages/${app.packageName}\">F-Droid</a></td>\r\n")
@@ -508,6 +528,9 @@ open class DataGeneratorViewModel(application: Application) : PackageUtilsViewMo
 
             if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.SIZE))
                 stringBuilder.append("- **Size:** ${apps[app].getSize()}\n")
+
+            if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.PLAY_STORE))
+                stringBuilder.append("- **[Play Store](https://play.google.com/store/apps/details?id=${apps[app].packageName})**\n")
 
             if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.FDROID))
                 stringBuilder.append("- **[F-Droid](https://f-droid.org/en/packages/${apps[app].packageName})**\n")

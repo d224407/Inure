@@ -141,8 +141,6 @@ class Preferences : SearchBarScopedFragment() {
                             openFragmentLinear(AboutScreen.newInstance(), imageView, AboutScreen.TAG)
                         }
 
-                            openFragmentSlide(Trial.newInstance(), Trial.TAG)
-                        }
                         R.string.other_apps -> {
                             openFragmentLinear(OtherAppsScreen.newInstance(), imageView, OtherAppsScreen.TAG)
                         }

@@ -352,23 +352,12 @@ abstract class ScopedFragment : Fragment(), SharedPreferences.OnSharedPreference
     }
 
     @Suppress("NOTHING_TO_INLINE")
-            true
-        } else {
-                if (goBack) {
-                    requireActivity().onBackPressedDispatcher.onBackPressed()
-                }
-            }
-            false
-        }
+    inline fun fullVersionCheck(goBack: Boolean = true): Boolean {
+        return true
     }
 
-            true
-        } else {
-                onClose()
-            }
-
-            false
-        }
+    open fun fullVersionCheck(onClose: () -> Unit): Boolean {
+        return true
     }
 
     @Throws(IllegalStateException::class)

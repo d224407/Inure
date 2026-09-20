@@ -14,7 +14,8 @@
     <string name="static_identifier" translatable="false">Static</string>
     <string name="time_placeholder" translatable="false">--:--</string>
     <string name="audio_file_info" translatable="false">%1$s | %2$s | %3$s</string>
-<string name="px" translatable="false">%1$s px</string>
+    <string name="play_store" translatable="false">Play Store</string>
+    <string name="px" translatable="false">%1$s px</string>
     <string name="amoled" translatable="false">AMOLED</string>
     <string name="shell" translatable="false">Shell</string>
     <string name="text" translatable="false">Text</string>
@@ -47,7 +48,8 @@
     <string name="csv" translatable="false">.CSV</string>
     <string name="shizuku" translatable="false">Shizuku</string>
     <string name="github_profile_link" translatable="false">https://github.com/Hamza417</string>
-<string name="hamza_rizwan" translatable="false">Hamza Rizwan</string>
+    <string name="play_profile_link" translatable="false">https://play.google.com/store/apps/dev?id=9002962740272949113</string>
+    <string name="hamza_rizwan" translatable="false">Hamza Rizwan</string>
     <string name="sample" translatable="false">sample</string>
     <string name="apk" translatable="false">APK</string>
     <string name="apks" translatable="false">APKS</string>

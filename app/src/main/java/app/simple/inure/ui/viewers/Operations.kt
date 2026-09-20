@@ -53,6 +53,7 @@ class Operations : SearchBarScopedFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         startPostponedEnterTransition()
+        fullVersionCheck()
         options.gone()
         searchBoxState(false, OperationsPreferences.isSearchVisible())
 

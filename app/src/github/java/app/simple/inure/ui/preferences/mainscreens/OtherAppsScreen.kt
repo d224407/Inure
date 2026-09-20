@@ -46,6 +46,12 @@ class OtherAppsScreen : ScopedFragment() {
                 override fun onIzzyondroidClicked() {
                     showWarning("Felicity is not available on IzzyOnDroid yet, please use the GitHub link to download the app.", false)
                 }
+
+                override fun onPlayStoreClicked() {
+                    val url = "https://play.google.com/store/apps/details?id=app.simple.felicity"
+                    val intent = Intent(Intent.ACTION_VIEW, url.toUri())
+                    startActivity(intent)
+                }
             })
         }
 
@@ -67,6 +73,10 @@ class OtherAppsScreen : ScopedFragment() {
                     val url = "https://apt.izzysoft.de/fdroid/index/apk/app.simple.peri/"
                     val intent = Intent(Intent.ACTION_VIEW, url.toUri())
                     startActivity(intent)
+                }
+
+                override fun onPlayStoreClicked() {
+
                 }
             })
         }

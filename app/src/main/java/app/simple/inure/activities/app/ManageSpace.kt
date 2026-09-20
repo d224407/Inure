@@ -154,36 +154,32 @@ class ManageSpace : BaseActivity() {
         }
 
         import.setOnClickListener {
-                kotlin.runCatching {
-                    appDataLoader.visible(animate = true)
-                    pickedFile.launch("application/*")
-                }.onFailure {
-                    appDataLoader.gone(animate = true)
-                    showWarning(it.message ?: "Unknown error", false)
-                }
-            } else {
+            kotlin.runCatching {
+                appDataLoader.visible(animate = true)
+                pickedFile.launch("application/*")
+            }.onFailure {
+                appDataLoader.gone(animate = true)
+                showWarning(it.message ?: "Unknown error", false)
             }
         }
 
         export.setOnClickListener {
-                appDataLoader.visible(animate = true)
-                lifecycleScope.launch(Dispatchers.IO) {
-                    kotlin.runCatching {
-                        val exportPath = applicationContext.exportAppData()
+            appDataLoader.visible(animate = true)
+            lifecycleScope.launch(Dispatchers.IO) {
+                kotlin.runCatching {
+                    val exportPath = applicationContext.exportAppData()
 
-                        withContext(Dispatchers.Main) {
-                            filePath = exportPath
-                            exportData.launch(exportPath.substringAfterLast("/"))
-                            appDataLoader.gone(animate = true)
-                        }
-                    }.onFailure {
-                        withContext(Dispatchers.Main) {
-                            appDataLoader.gone(animate = true)
-                            showWarning(it.message ?: "Unknown error", false)
-                        }
+                    withContext(Dispatchers.Main) {
+                        filePath = exportPath
+                        exportData.launch(exportPath.substringAfterLast("/"))
+                        appDataLoader.gone(animate = true)
+                    }
+                }.onFailure {
+                    withContext(Dispatchers.Main) {
+                        appDataLoader.gone(animate = true)
+                        showWarning(it.message ?: "Unknown error", false)
                     }
                 }
-            } else {
             }
         }
 

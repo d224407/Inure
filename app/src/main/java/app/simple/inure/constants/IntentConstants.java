@@ -1,6 +1,8 @@
 package app.simple.inure.constants;
 
 public class IntentConstants {
+    public static final String ACTION_VERIFICATION_REQUEST = "app.simple.inureunlocker.action.LICENCE_VERIFICATION_REQUEST";
+    public static final String ACTION_VERIFICATION_RESPONSE = "app.simple.inureunlocker.action.LICENCE_VERIFICATION_RESPONSE";
     
     public static final String EXTRA_LICENSE = "LICENSE_STATUS";
     public static final int EXTRA_VERIFIED = 0;

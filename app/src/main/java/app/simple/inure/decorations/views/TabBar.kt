@@ -35,12 +35,7 @@ class TabBar(context: Context, attrs: AttributeSet?) : CustomHorizontalRecyclerV
         adapterTabBar = AdapterTabBar(titles)
         adapterTabBar?.setOnTabBarClickListener(object : TabBarCallback {
             override fun onTabClicked(position: Int) {
-                    viewPager2.setCurrentItem(position, true)
-                } else {
-                    if (position.isNotZero()) {
-                        onPositionChanged(position)
-                    }
-                }
+                viewPager2.setCurrentItem(position, true)
             }
         })
 

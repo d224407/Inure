@@ -126,6 +126,7 @@ class AccessibilityScreen : ScopedFragment() {
         }
 
         divider.setOnSwitchCheckedChangeListener {
+            if (fullVersionCheck(goBack = false)) {
                 AccessibilityPreferences.setDivider(it)
             }
         }
@@ -160,12 +161,14 @@ class AccessibilityScreen : ScopedFragment() {
         }
 
         colorfulIcons.setOnSwitchCheckedChangeListener {
+            if (fullVersionCheck(goBack = false)) {
                 AccessibilityPreferences.setColorfulIcons(it)
                 paletteContainer.visibility = if (it) View.VISIBLE else View.GONE
             }
         }
 
         palette.setOnClickListener {
+            if (fullVersionCheck(goBack = false)) {
                 PopupPalettes(it)
             }
         }

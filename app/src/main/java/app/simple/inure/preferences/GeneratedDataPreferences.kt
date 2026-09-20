@@ -13,6 +13,7 @@ object GeneratedDataPreferences {
     const val MINIMUM_SDK = 1L shl 6
     const val TARGET_SDK = 1L shl 7
     const val SIZE = 1L shl 8
+    const val PLAY_STORE = 1L shl 9
     const val FDROID = 1L shl 10
     const val IZZYONDROID = 1L shl 11
 

@@ -10,6 +10,7 @@ import app.simple.inure.extensions.popup.PopupLinearLayout
 class PopupFelicity(view: View) : BasePopupWindow() {
 
     private val github: DynamicRippleTextView
+    private val playStore: DynamicRippleTextView
     private var popupLinksCallbacks: PopupLinksCallbacks? = null
 
     init {
@@ -17,10 +18,16 @@ class PopupFelicity(view: View) : BasePopupWindow() {
 
         contentView.apply {
             github = findViewById(R.id.popup_github)
+            playStore = findViewById(R.id.popup_playstore)
         }
 
         github.setOnClickListener {
             popupLinksCallbacks?.onGithubClicked()
+            dismiss()
+        }
+
+        playStore.setOnClickListener {
+            popupLinksCallbacks?.onPlayStoreClicked()
             dismiss()
         }
 

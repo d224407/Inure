@@ -215,13 +215,7 @@ abstract class ScopedBottomSheetFragment : BottomSheetDialogFragment(),
         layoutTransition = transition
     }
 
-            true
-        } else {
-                if (goBack) {
-                    requireActivity().onBackPressedDispatcher.onBackPressed()
-                }
-            }
-            false
-        }
+    open fun fullVersionCheck(goBack: Boolean = true): Boolean {
+        return true
     }
 }

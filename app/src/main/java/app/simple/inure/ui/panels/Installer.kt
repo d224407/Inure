@@ -301,11 +301,7 @@ class Installer : ScopedFragment(), InstallerCallbacks {
 
                 viewPager.adapter = AdapterInstallerInfoPanels(this, file, titles.toTypedArray(), packageInfo)
                 tabBar.initWithViewPager(viewPager, titles) { position ->
-                        Log.i(TAG, "onViewCreated: Tab changed to position $position")
-                    } else {
-                            tabBar.shiftToFirstTab(viewPager)
-                        }
-                    }
+                    Log.i(TAG, "onViewCreated: Tab changed to position $position")
                 }
             }.onFailure {
                 showError(it)

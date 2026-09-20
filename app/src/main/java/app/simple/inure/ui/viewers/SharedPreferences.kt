@@ -41,6 +41,7 @@ class SharedPreferences : SearchBarScopedFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         startPostponedEnterTransition()
+        fullVersionCheck()
 
         sharedPreferencesViewModel.getSharedPrefs().observe(viewLifecycleOwner) {
             loader.gone(animate = true)

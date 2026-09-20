@@ -60,7 +60,6 @@ class AboutScreen : ScopedFragment() {
         startPostponedEnterTransition()
         setAppVersionTag()
 
-
         credits.setOnClickListener {
             openWebPage(getString(R.string.credits))
         }

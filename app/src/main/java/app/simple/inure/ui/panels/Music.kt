@@ -64,6 +64,7 @@ class Music : KeyboardScopedFragment() {
         super.onViewCreated(view, savedInstanceState)
         postponeEnterTransition()
 
+        if (fullVersionCheck()) {
             if (requireContext().checkStoragePermission()) {
                 if (musicViewModel.shouldShowLoader()) {
                     showLoader(true)

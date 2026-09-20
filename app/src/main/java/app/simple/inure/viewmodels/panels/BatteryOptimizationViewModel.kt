@@ -230,7 +230,7 @@ class BatteryOptimizationViewModel(application: Application) : RootShizukuViewMo
                 if (it is ClassCastException) {
                     postWarning("ERR: Shizuku didn't respond properly for battery optimization data fetch request, try restarting Shizuku.")
                 } else {
-                    postWarning("ERR: ${it.message ?: "Unknown shizuku error while loading battery optimization data"}}")
+                    postWarning("ERR: ${it.message ?: "Unknown shizuku error while loading battery optimization data"}")
                 }
             }
         }

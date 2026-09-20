@@ -98,6 +98,7 @@ import app.simple.inure.util.AdapterUtils.setAppVisualStates
 import app.simple.inure.util.ConditionUtils.invert
 import app.simple.inure.util.FileUtils.toFile
 import app.simple.inure.util.InfoStripUtils.getAppInfo
+import app.simple.inure.util.MarketUtils
 import app.simple.inure.util.PermissionUtils.checkDumpPermission
 import app.simple.inure.util.PermissionUtils.checkStoragePermission
 import app.simple.inure.util.ViewUtils.gone
@@ -206,6 +207,7 @@ class AppInfo : ScopedFragment() {
                     }
 
                     override fun onAddClicked() {
+                        if (fullVersionCheck(goBack = false)) {
                             childFragmentManager.showAddTagDialog().onTag = {
                                 tagsViewModel.addTag(it, packageInfo) {
                                     this@apply.addTag(it)
@@ -218,33 +220,29 @@ class AppInfo : ScopedFragment() {
         }
 
         if (ConfigurationPreferences.isRootOrShizuku()) {
-                batteryOptimization.visible(animate = false)
-                divider1.visible(animate = false)
+            batteryOptimization.visible(animate = false)
+            divider1.visible(animate = false)
 
-                appInfoViewModel.getBatteryOptimization().observe(viewLifecycleOwner) {
-                    batteryOptimizationSwitch.isChecked = it.isOptimized
+            appInfoViewModel.getBatteryOptimization().observe(viewLifecycleOwner) {
+                batteryOptimizationSwitch.isChecked = it.isOptimized
 
-                    if (it.isOptimized) {
-                        batteryOptimizationState.setTextWithAnimation(getString(R.string.optimized), 250L)
+                if (it.isOptimized) {
+                    batteryOptimizationState.setTextWithAnimation(getString(R.string.optimized), 250L)
+                } else {
+                    batteryOptimizationState.setTextWithAnimation(getString(R.string.not_optimized), 250L)
+                }
+
+                batteryOptimizationSwitch.setOnSwitchCheckedChangeListener { isChecked ->
+                    if (isChecked) {
+                        appInfoViewModel.setBatteryOptimization(packageInfo, true)
                     } else {
-                        batteryOptimizationState.setTextWithAnimation(getString(R.string.not_optimized), 250L)
-                    }
-
-                    batteryOptimizationSwitch.setOnSwitchCheckedChangeListener { isChecked ->
-                        if (isChecked) {
-                            appInfoViewModel.setBatteryOptimization(packageInfo, true)
-                        } else {
-                            appInfoViewModel.setBatteryOptimization(packageInfo, false)
-                        }
-                    }
-
-                    batteryOptimization.setOnClickListener {
-                        batteryOptimizationSwitch.toggle()
+                        appInfoViewModel.setBatteryOptimization(packageInfo, false)
                     }
                 }
-            } else {
-                batteryOptimization.gone()
-                divider1.gone()
+
+                batteryOptimization.setOnClickListener {
+                    batteryOptimizationSwitch.toggle()
+                }
             }
         } else {
             batteryOptimization.gone()
@@ -671,6 +669,14 @@ class AppInfo : ScopedFragment() {
                                             childFragmentManager.launchExtract(packageInfo, emptySet())
                                         }
                                     })
+                            }
+                        }
+
+                        R.string.play_store -> {
+                            try {
+                                MarketUtils.openAppOnPlayStore(requireContext(), packageInfo.packageName)
+                            } catch (e: Exception) {
+                                showWarning(e.message ?: getString(R.string.error))
                             }
                         }
 

@@ -47,6 +47,11 @@ class GenerateAppData : ScopedBottomSheetFragment() {
         setDataFormat()
         generateButtonState()
 
+        if (AppUtils.isPlayFlavor()) {
+            linkChipGroup.removeView(linkChipGroup.findViewById(R.id.fdroid))
+            linkChipGroup.removeView(linkChipGroup.findViewById(R.id.izzyondroid))
+        }
+
         requiredChipGroup.setOnCheckedStateChangeListener { _, checkedIds ->
             var sourceFlags = GeneratedDataPreferences.getGeneratorFlags()
 
@@ -109,6 +114,12 @@ class GenerateAppData : ScopedBottomSheetFragment() {
 
         linkChipGroup.setOnCheckedStateChangeListener { _, checkedIds ->
             var sourceFlags = GeneratedDataPreferences.getGeneratorFlags()
+
+            sourceFlags = if (checkedIds.contains(R.id.play_store)) {
+                FlagUtils.setFlag(sourceFlags, GeneratedDataPreferences.PLAY_STORE)
+            } else {
+                FlagUtils.unsetFlag(sourceFlags, GeneratedDataPreferences.PLAY_STORE)
+            }
 
             if (AppUtils.isGithubFlavor() || AppUtils.isBetaFlavor()) {
                 sourceFlags = if (checkedIds.contains(R.id.fdroid)) {
@@ -178,6 +189,10 @@ class GenerateAppData : ScopedBottomSheetFragment() {
         }
 
         // ---------------------------------------------------------------------------- //
+
+        if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.PLAY_STORE)) {
+            linkChipGroup.check(R.id.play_store)
+        }
 
         if (FlagUtils.isFlagSet(flags, GeneratedDataPreferences.FDROID)) {
             linkChipGroup.check(R.id.fdroid)
