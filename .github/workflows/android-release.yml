@@ -59,9 +59,20 @@ jobs:
 
       - name: Build Release
         run: |
+          set -o pipefail
           ./gradlew :app:assembleGithubRelease --no-daemon --scan \
             -Dscan.terms-of-use.agree=yes \
-            -Dscan.terms-of-use.url="https://gradle.com/help/legal-terms-of-use"
+            -Dscan.terms-of-use.url="https://gradle.com/help/legal-terms-of-use" \
+            | tee gradle-build.log
+
+      - name: Publish Gradle Build Scan link to summary
+        if: always()
+        run: |
+          echo "## Gradle Build Scan" >> "$GITHUB_STEP_SUMMARY"
+          grep -Eo 'https://scans\.gradle\.com/s/[a-zA-Z0-9]+' gradle-build.log \
+            | tail -n 1 \
+            | sed 's#^#Scan (public link): #' >> "$GITHUB_STEP_SUMMARY" \
+            || echo "No build scan link found in log." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload Gradle build report
         if: always()
@@ -71,6 +82,7 @@ jobs:
           path: |
             app/build/reports/
             build/reports/
+            gradle-build.log
           if-no-files-found: ignore
 
       - name: Sign APK
