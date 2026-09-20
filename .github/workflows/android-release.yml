@@ -18,6 +18,10 @@ jobs:
       BUILD_TOOLS_VERSION: "35.0.0"
       ANDROID_HOME: /usr/local/lib/android/sdk
       ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+      RELEASE_STORE_FILE: ${{ github.workspace }}/release.keystore
+      RELEASE_STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+      RELEASE_KEY_ALIAS: ${{ secrets.KEYSTORE_ALIAS }}
+      RELEASE_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
 
     steps:
       - name: Checkout
@@ -28,7 +32,14 @@ jobs:
         with:
           distribution: temurin
           java-version: "17"
-          cache: gradle
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          build-scan-publish: true
+          build-scan-terms-of-use-url: "https://gradle.com/help/legal-terms-of-use"
+          build-scan-terms-of-use-agree: "yes"
+          cache-read-only: ${{ github.ref != 'refs/heads/main' }}
 
       - name: Install Android cmdline-tools
         run: |
@@ -57,26 +68,15 @@ jobs:
       - name: Grant Gradle permission
         run: chmod +x ./gradlew
 
-      - name: Configure Build Scan
-        run: |
-          mkdir -p ~/.gradle
-          {
-            echo "scan.terms-of-use.url=https://gradle.com/help/legal-terms-of-use"
-            echo "scan.terms-of-use.accept=true"
-          } >> ~/.gradle/gradle.properties
+      - name: Decode keystore
+        run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > "$RELEASE_STORE_FILE"
 
       - name: Build Release
-        run: |
-          set -o pipefail
-          ./gradlew :app:assembleGithubRelease --no-daemon --scan 2>&1 | tee gradle-build.log
+        run: ./gradlew :app:assembleGithubRelease --no-daemon --scan
 
-      - name: Build Scan summary
+      - name: Cleanup keystore
         if: always()
-        run: |
-          URL=$(grep -Eo 'https://scans\.gradle\.com/s/[A-Za-z0-9]+' gradle-build.log | tail -n 1 || true)
-          if [ -n "$URL" ]; then
-            echo "[Build Scan]($URL)" >> "$GITHUB_STEP_SUMMARY"
-          fi
+        run: rm -f "$RELEASE_STORE_FILE"
 
       - name: Upload Gradle report
         if: always()
@@ -86,22 +86,11 @@ jobs:
           path: |
             app/build/reports/
             build/reports/
-            gradle-build.log
           if-no-files-found: ignore
-
-      - name: Sign APK
-        id: sign
-        uses: r0adkll/sign-android-release@v1
-        with:
-          releaseDirectory: app/build/outputs/apk/github/release
-          signingKeyBase64: ${{ secrets.KEYSTORE_BASE64 }}
-          alias: ${{ secrets.KEYSTORE_ALIAS }}
-          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
 
       - name: Upload signed APK
         uses: actions/upload-artifact@v4
         with:
           name: Inure-release
-          path: ${{ steps.sign.outputs.signedReleaseFile }}
+          path: app/build/outputs/apk/github/release/*.apk
           if-no-files-found: error
