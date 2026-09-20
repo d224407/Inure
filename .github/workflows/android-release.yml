@@ -57,28 +57,28 @@ jobs:
       - name: Grant Gradle permission
         run: chmod +x ./gradlew
 
+      - name: Configure Build Scan
+        run: |
+          mkdir -p ~/.gradle
+          {
+            echo "scan.terms-of-use.url=https://gradle.com/help/legal-terms-of-use"
+            echo "scan.terms-of-use.accept=true"
+          } >> ~/.gradle/gradle.properties
+
       - name: Build Release
         run: |
           set -o pipefail
-          ./gradlew :app:assembleGithubRelease --no-daemon --scan \
-            -Dscan.terms-of-use.agree=yes \
-            -Dscan.terms-of-use.url="https://gradle.com/help/legal-terms-of-use" \
-            | tee gradle-build.log
+          ./gradlew :app:assembleGithubRelease --no-daemon --scan 2>&1 | tee gradle-build.log
 
-      - name: Publish Gradle Build Scan link to summary
+      - name: Build Scan summary
         if: always()
         run: |
-          SCAN_URL=$(grep -Eo 'https://scans\.gradle\.com/s/[a-zA-Z0-9]+' gradle-build.log | tail -n 1 || true)
-          {
-            echo "## Gradle Build Scan"
-            if [ -n "$SCAN_URL" ]; then
-              echo "Scan (public link): $SCAN_URL"
-            else
-              echo "No build scan link found in log — it likely was not published (check the tail of gradle-build.log in the uploaded artifact for a 'Publishing build scan' or terms-of-use error near the very end)."
-            fi
-          } >> "$GITHUB_STEP_SUMMARY"
+          URL=$(grep -Eo 'https://scans\.gradle\.com/s/[A-Za-z0-9]+' gradle-build.log | tail -n 1 || true)
+          if [ -n "$URL" ]; then
+            echo "[Build Scan]($URL)" >> "$GITHUB_STEP_SUMMARY"
+          fi
 
-      - name: Upload Gradle build report
+      - name: Upload Gradle report
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -105,5 +105,3 @@ jobs:
           name: Inure-release
           path: ${{ steps.sign.outputs.signedReleaseFile }}
           if-no-files-found: error
-
-          
