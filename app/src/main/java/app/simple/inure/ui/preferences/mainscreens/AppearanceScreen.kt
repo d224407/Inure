@@ -74,19 +74,16 @@ class AppearanceScreen : ScopedFragment() {
         }
 
         listStyle.setOnClickListener {
-            if (fullVersionCheck(goBack = false)) {
                 PopupLayoutStyle(it)
             }
         }
 
         roundedCorner.setOnClickListener {
-            if (fullVersionCheck(goBack = false)) {
                 RoundedCorner.newInstance().show(childFragmentManager, RoundedCorner.TAG)
             }
         }
 
         iconSize.setOnClickListener {
-            if (fullVersionCheck(goBack = false)) {
                 IconSize.newInstance()
                     .show(childFragmentManager, IconSize.TAG)
             }
@@ -97,7 +94,6 @@ class AppearanceScreen : ScopedFragment() {
         }
 
         coloredIconShadows.setOnSwitchCheckedChangeListener {
-            if (fullVersionCheck(goBack = false)) {
                 AppearancePreferences.setColoredIconShadowsState(it)
             }
         }

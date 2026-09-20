@@ -108,7 +108,6 @@ class Batch : ScopedFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if (fullVersionCheck()) {
             if (batchViewModel.shouldShowLoader()) {
                 showLoader(manualOverride = true)
             }

@@ -23,6 +23,7 @@ import app.simple.inure.R
 import app.simple.inure.apk.utils.PackageUtils.isPackageInstalled
 import app.simple.inure.constants.BundleConstants
 import app.simple.inure.crash.CrashReport
+import app.simple.inure.decorations.typeface.TypeFaceTextView
 import app.simple.inure.decorations.views.LoaderImageView
 import app.simple.inure.extensions.fragments.ScopedFragment
 import app.simple.inure.preferences.AccessibilityPreferences
@@ -32,7 +33,6 @@ import app.simple.inure.preferences.ConfigurationPreferences
 import app.simple.inure.preferences.DevelopmentPreferences
 import app.simple.inure.preferences.MainPreferences
 import app.simple.inure.preferences.SetupPreferences
-import app.simple.inure.preferences.TrialPreferences
 import app.simple.inure.services.DataLoaderService
 import app.simple.inure.ui.panels.Home
 import app.simple.inure.util.AppUtils
@@ -57,6 +57,7 @@ class SplashScreen : ScopedFragment() {
 
     private lateinit var icon: ImageView
     private lateinit var loaderImageView: LoaderImageView
+    private lateinit var daysLeft: TypeFaceTextView
 
     private var isAppDataLoaded = false
     private var isBatchLoaded = false
@@ -115,6 +116,7 @@ class SplashScreen : ScopedFragment() {
 
         icon = view.findViewById(R.id.imageView)
         loaderImageView = view.findViewById(R.id.loader)
+        daysLeft = view.findViewById(R.id.days_left)
 
         unlockStateChecker()
 
@@ -355,7 +357,26 @@ class SplashScreen : ScopedFragment() {
     }
 
     private fun unlockStateChecker() {
-        // Trial/licensing gates removed. The app is permanently unlocked.
+        when {
+                    daysLeft.gone()
+                } else {
+                }
+            }
+                when {
+                        Log.d(TAG, "Licence key mode")
+                        daysLeft.gone()
+                    }
+                    else -> {
+                            daysLeft.gone()
+                        } else {
+                        }
+                    }
+                }
+            }
+            else -> {
+                // Should always be 0
+            }
+        }
     }
 
     override fun onResume() {

@@ -7,29 +7,22 @@ import android.util.Log
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import app.simple.inure.constants.IntentConstants
 import app.simple.inure.constants.LicenseConstants
-import app.simple.inure.preferences.TrialPreferences
 
-class LicenceVerificationReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         if (intent?.action == IntentConstants.ACTION_VERIFICATION_RESPONSE) {
             Log.i(TAG, "Received license status: ${intent.getIntExtra(IntentConstants.EXTRA_LICENSE, -1)}")
             when (intent.getIntExtra(IntentConstants.EXTRA_LICENSE, -1)) {
                 LicenseConstants.LICENSED -> {
                     Log.i(TAG, "Licensed")
-                    TrialPreferences.setFullVersion(true)
-                    TrialPreferences.setLastVerificationDate(System.currentTimeMillis())
                 }
                 LicenseConstants.NOT_LICENSED -> {
                     Log.i(TAG, "Not Licensed")
-                    TrialPreferences.setFullVersion(false)
                 }
                 LicenseConstants.ERROR -> {
                     Log.i(TAG, "Error")
-                    TrialPreferences.setFullVersion(false)
                 }
                 LicenseConstants.UNSPECIFIED -> {
                     Log.i(TAG, "Invalid status")
-                    TrialPreferences.setFullVersion(false)
                 }
             }
 
@@ -49,8 +42,6 @@ class LicenceVerificationReceiver : BroadcastReceiver() {
     }
 
     companion object {
-        private const val ACTION_VERIFICATION = "app.simple.inureunlocker.LICENCE_VERIFICATION"
 
-        private const val TAG = "LicenceVerificationReceiver"
     }
 }

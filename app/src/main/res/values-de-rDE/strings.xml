@@ -562,6 +562,8 @@ Ein gerootetes Gerät wird benötigt.</string>
     <string name="failed_to_activate_full_version">Vollversion konnte nicht aktiviert werden!</string>
     <string name="full_version_already_activated">Vollversion bereits aktiviert</string>
     <string name="this_feature_is_only_available_in_full_version">Diese Funktion steht nur in der Vollversion zur Verfügung.</string>
+    <string name="days_trial_period_remaining">%1$d Tage im Testzeitraum.</string>
+    <string name="purchase">Kaufen</string>
     <string name="recently_added">Kürzlich hinzugefügt</string>
     <string name="boot_manager">Bootmanager</string>
     <string name="disable_all">Alle deaktivieren</string>
@@ -606,6 +608,8 @@ Ein gerootetes Gerät wird benötigt.</string>
     <string name="dangerous_permission_info">Aufgrund der Beschränkung von Android kann nur der Status gefährlicher Berechtigungen geändert werden.</string>
     <string name="dont_show_again">Nicht wieder anzeigen</string>
     <string name="date">Datum</string>
+    <string name="trial_info">Testversion endet bald</string>
+    <string name="desc_trial">Inure App Manager bietet 15 Tage lang kostenlosen Zugriff auf die App. Danach muss Unlocker aktiviert werden.</string>
     <string name="use_shizuku">Shizuku-Modus</string>
     <string name="shizuku_desc">Verwenden Sie Shizuku API, anstatt native Android-APIs und Libs zu verwenden, um einige Funktionen auszuführen.\n\nDiese Option wird für nicht-root Benutzer empfohlen.\n\nShizuku Zugriff ist erforderlich.</string>
     <string name="shizuku_alert">Wenn Root-Zugriff gewährt wird und der Root-Modus in der App umgeschaltet wird, wird der Root-Modus gegenüber Shizuku bevorzugt.</string>
@@ -782,6 +786,7 @@ Ein gerootetes Gerät wird benötigt.</string>
     <string name="desc_disable_animations">App-Animationen vollständig deaktivieren.</string>
     <string name="add_vote_desc">Tippen Sie auf die Schaltfläche, um Ihre Stimme abzugeben.</string>
     <string name="relevance">Relevanz</string>
+    <string name="one_time_purchase">Einmaliger Kauf. Lebenslanger Zugriff.</string>
     <string name="allow">Zulassen</string>
     <string name="deny">Verweigern</string>
     <string name="ignore">Ignorieren</string>

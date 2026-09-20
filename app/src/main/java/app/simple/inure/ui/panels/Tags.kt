@@ -70,7 +70,6 @@ class Tags : ScopedFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fullVersionCheck()
         postponeEnterTransition()
 
         tagsViewModel?.getTags()?.observe(viewLifecycleOwner) {

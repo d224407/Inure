@@ -46,7 +46,6 @@ class Debloat : ScopedFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fullVersionCheck()
         postponeEnterTransition()
 
         if (debloatViewModel?.shouldShowLoader() == true) {

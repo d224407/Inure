@@ -44,7 +44,6 @@ class Boot : SearchBarScopedFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         startPostponedEnterTransition()
-        fullVersionCheck()
         searchBoxState(false, BootPreferences.isSearchVisible())
 
         bootViewModel?.getBootData()?.observe(viewLifecycleOwner) {

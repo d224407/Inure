@@ -27,7 +27,6 @@ import app.simple.inure.helpers.ShizukuServiceHelper
 import app.simple.inure.models.BatteryOptimizationModel
 import app.simple.inure.preferences.ConfigurationPreferences
 import app.simple.inure.util.AppUtils
-import app.simple.inure.util.AppUtils.isUnlocker
 import app.simple.inure.util.ArrayUtils.toArrayList
 import app.simple.inure.util.ConditionUtils.invert
 import app.simple.inure.util.FileUtils.toFileOrNull
@@ -254,12 +253,10 @@ class AppInfoViewModel(application: Application, private var packageInfo: Packag
         viewModelScope.launch(Dispatchers.Default) {
             val list = arrayListOf<Pair<Int, Int>>()
 
-            if (packageInfo.isUnlocker().invert()) {
                 list.add(Pair(R.drawable.ic_downloading, R.string.extract))
             }
 
             if (AppUtils.isGithubFlavor() || AppUtils.isBetaFlavor()) {
-                if (packageInfo.isUnlocker().invert()) {
                     list.add(Pair(R.drawable.ic_fdroid, R.string.fdroid))
                 }
             }
@@ -273,7 +270,6 @@ class AppInfoViewModel(application: Application, private var packageInfo: Packag
             add(Pair(R.drawable.ic_launch, R.string.launch))
         }
 
-        if (packageInfo.isUnlocker().invert()) {
             add(Pair(R.drawable.ic_send, R.string.send))
         }
 
@@ -316,7 +312,6 @@ class AppInfoViewModel(application: Application, private var packageInfo: Packag
             add(Pair(R.drawable.ic_launch, R.string.launch))
         }
 
-        if (packageInfo.isUnlocker().invert()) {
             add(Pair(R.drawable.ic_send, R.string.send))
         }
 
@@ -360,7 +355,6 @@ class AppInfoViewModel(application: Application, private var packageInfo: Packag
                 add(Pair(R.drawable.ic_launch, R.string.launch))
             }
 
-            if (packageInfo.isUnlocker().invert()) {
                 add(Pair(R.drawable.ic_send, R.string.send))
             }
 
@@ -372,7 +366,6 @@ class AppInfoViewModel(application: Application, private var packageInfo: Packag
                 add(Pair(R.drawable.ic_launch, R.string.launch))
             }
 
-            if (packageInfo.isUnlocker().invert()) {
                 add(Pair(R.drawable.ic_send, R.string.send))
             }
 

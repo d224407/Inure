@@ -557,6 +557,8 @@
     <string name="failed_to_activate_full_version">पूर्ण संस्करण सक्रिय करने में विफल!</string>
     <string name="full_version_already_activated">पूर्ण संस्करण पहले से ही सक्रिय है</string>
     <string name="this_feature_is_only_available_in_full_version">यह सुविधा केवल पूर्ण संस्करण में उपलब्ध है।</string>
+    <string name="days_trial_period_remaining">परीक्षण अवधि में %1$d दिन शेष हैं।</string>
+    <string name="purchase">खरीदें</string>
     <string name="recently_added">हाल ही में जोडा हुआ</string>
     <string name="boot_manager">बूट प्रबंधक</string>
     <string name="disable_all">सारा डिसएबल करें</string>
@@ -601,6 +603,8 @@
     <string name="dangerous_permission_info">एंड्रॉयड की सीमा के कारण, केवल खतरनाक अनुमति की स्थिति को ही बदला जा सकता है।</string>
     <string name="dont_show_again">दोबारा न दिखाएं</string>
     <string name="date">दिनांक</string>
+    <string name="trial_info">परीक्षण जानकारी</string>
+    <string name="desc_trial">इन्योर ऐप मैनेजर 15 दिनों के लिए ऐप तक पूरी पहुँच निःशुल्क प्रदान करता है। उसके बाद इन सुविधाओं के लिए अनलॉकर को सक्रिय करना आवश्यक होगा।</string>
     <string name="use_shizuku">शिज़ुकु मोड</string>
     <string name="shizuku_desc">कुछ फ़ंक्शन निष्पादित करने के लिए मूल Android API और Libs का उपयोग करने के बजाय Shizuku API का उपयोग करें।\n\nयह विकल्प गैर-रूट उपयोगकर्ताओं के लिए अनुशंसित है।\n\nShizuku एक्सेस आवश्यक है।</string>
     <string name="shizuku_alert">यदि रूट एक्सेस प्रदान किया गया है और ऐप में रूट मोड चालू है, तो शिज़ुकु की तुलना में रूट मोड को प्राथमिकता दी जाएगी।</string>
@@ -777,6 +781,7 @@
     <string name="desc_disable_animations">ऐप एनिमेशन को पूरी तरह से अक्षम करें।</string>
     <string name="add_vote_desc">अपना वोट जोड़ने के लिए बटन पर टैप करें।</string>
     <string name="relevance">प्रासंगिकता</string>
+    <string name="one_time_purchase">एक बार की खरीदारी। आजीवन पहुंच।</string>
     <string name="allow">अनुमति दें</string>
     <string name="deny">अस्वीकार करें</string>
     <string name="ignore">नज़रअंदाज़ करें</string>

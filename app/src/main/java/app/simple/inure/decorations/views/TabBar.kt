@@ -6,7 +6,6 @@ import androidx.viewpager2.widget.ViewPager2
 import app.simple.inure.adapters.installer.AdapterTabBar
 import app.simple.inure.adapters.installer.AdapterTabBar.Companion.TabBarCallback
 import app.simple.inure.decorations.overscroll.CustomHorizontalRecyclerView
-import app.simple.inure.preferences.TrialPreferences
 import app.simple.inure.util.ConditionUtils.isNotZero
 
 class TabBar(context: Context, attrs: AttributeSet?) : CustomHorizontalRecyclerView(context, attrs) {
@@ -36,7 +35,6 @@ class TabBar(context: Context, attrs: AttributeSet?) : CustomHorizontalRecyclerV
         adapterTabBar = AdapterTabBar(titles)
         adapterTabBar?.setOnTabBarClickListener(object : TabBarCallback {
             override fun onTabClicked(position: Int) {
-                if (TrialPreferences.isAppFullVersionEnabled()) {
                     viewPager2.setCurrentItem(position, true)
                 } else {
                     if (position.isNotZero()) {

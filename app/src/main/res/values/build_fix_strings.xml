@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Kept in the main source set because these labels are referenced by
+         both common and GitHub-flavor layouts. -->
+    <string name="fdroid" translatable="false">F-Droid</string>
+    <string name="izzyondroid" translatable="false">IzzyOnDroid</string>
+    <string name="google" translatable="false">Google</string>
+</resources>

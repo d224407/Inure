@@ -557,6 +557,8 @@
     <string name="failed_to_activate_full_version">フルバージョンの有効化に失敗しました！</string>
     <string name="full_version_already_activated">フルバージョンは既に有効です</string>
     <string name="this_feature_is_only_available_in_full_version">14日間の試用期間が終了しました。\nすべての機能を使用するにはアップグレードしてください。</string>
+    <string name="days_trial_period_remaining">試用期間は残り %1$d 日です。</string>
+    <string name="purchase">購入</string>
     <string name="recently_added">最近追加</string>
     <string name="boot_manager">ブートマネージャー</string>
     <string name="disable_all">すべて無効化</string>
@@ -601,6 +603,8 @@
     <string name="dangerous_permission_info">Androidの制限により、Dangerous（危険）な権限のステータスのみ変更可能です。</string>
     <string name="dont_show_again">今後表示しない</string>
     <string name="date">日付</string>
+    <string name="trial_info">試用情報</string>
+    <string name="desc_trial">Inure App Managerは15日間無料でフルアクセスを提供します。それ以降、機能を使用するにはUnlockerの有効化が必要です。</string>
     <string name="use_shizuku">Shizukuモード</string>
     <string name="shizuku_desc">いくつかの機能を実行するために、ネイティブAndroid APIやライブラリの代わりにShizuku APIを使用します。\n\n非Rootユーザーに推奨されます。\n\nShizukuのアクセス権限が必要です。</string>
     <string name="shizuku_alert">Rootアクセスが許可され、アプリ内でRootモードがオンになっている場合、ShizukuよりもRootモードが優先されます。</string>
@@ -777,6 +781,7 @@
     <string name="desc_disable_animations">アプリアニメーションを完全に無効にします。</string>
     <string name="add_vote_desc">ボタンをタップして投票を追加します。</string>
     <string name="relevance">関連性</string>
+    <string name="one_time_purchase">1回限りの購入。無期限アクセス。</string>
     <string name="allow">許可</string>
     <string name="deny">拒否</string>
     <string name="ignore">無視</string>

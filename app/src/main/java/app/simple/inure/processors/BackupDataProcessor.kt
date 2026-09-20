@@ -26,7 +26,6 @@ import app.simple.inure.database.instances.TagsDatabase
 import app.simple.inure.database.instances.TerminalCommandDatabase
 import app.simple.inure.preferences.MainPreferences
 import app.simple.inure.preferences.SharedPreferences
-import app.simple.inure.preferences.TrialPreferences
 import app.simple.inure.util.AppUtils
 import app.simple.inure.util.FileUtils.toFile
 import net.lingala.zip4j.ZipFile
@@ -228,7 +227,6 @@ object BackupDataProcessor {
         TagsDatabase.getInstance(this)
         FOSSDatabase.getInstance(this)
         BatchProfileDatabase.getInstance(this)
-        TrialPreferences.migrateLegacy()
 
         function(errors)
     }

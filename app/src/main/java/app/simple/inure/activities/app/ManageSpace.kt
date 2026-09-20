@@ -18,7 +18,6 @@ import app.simple.inure.decorations.views.CustomProgressBar
 import app.simple.inure.dialogs.miscellaneous.Warning
 import app.simple.inure.extensions.activities.BaseActivity
 import app.simple.inure.preferences.AppearancePreferences
-import app.simple.inure.preferences.TrialPreferences
 import app.simple.inure.processors.BackupDataProcessor.exportAppData
 import app.simple.inure.processors.BackupDataProcessor.importAppData
 import app.simple.inure.services.DataLoaderService
@@ -155,31 +154,36 @@ class ManageSpace : BaseActivity() {
         }
 
         import.setOnClickListener {
-            kotlin.runCatching {
-                appDataLoader.visible(animate = true)
-                pickedFile.launch("application/*")
-            }.onFailure {
-                appDataLoader.gone(animate = true)
-                showWarning(it.message ?: "Unknown error", false)
+                kotlin.runCatching {
+                    appDataLoader.visible(animate = true)
+                    pickedFile.launch("application/*")
+                }.onFailure {
+                    appDataLoader.gone(animate = true)
+                    showWarning(it.message ?: "Unknown error", false)
+                }
+            } else {
             }
         }
 
         export.setOnClickListener {
-            appDataLoader.visible(animate = true)
-            lifecycleScope.launch(Dispatchers.IO) {
-                kotlin.runCatching {
-                    val exportPath = applicationContext.exportAppData()
-                    withContext(Dispatchers.Main) {
-                        filePath = exportPath
-                        exportData.launch(exportPath.substringAfterLast("/"))
-                        appDataLoader.gone(animate = true)
-                    }
-                }.onFailure {
-                    withContext(Dispatchers.Main) {
-                        appDataLoader.gone(animate = true)
-                        showWarning(it.message ?: "Unknown error", false)
+                appDataLoader.visible(animate = true)
+                lifecycleScope.launch(Dispatchers.IO) {
+                    kotlin.runCatching {
+                        val exportPath = applicationContext.exportAppData()
+
+                        withContext(Dispatchers.Main) {
+                            filePath = exportPath
+                            exportData.launch(exportPath.substringAfterLast("/"))
+                            appDataLoader.gone(animate = true)
+                        }
+                    }.onFailure {
+                        withContext(Dispatchers.Main) {
+                            appDataLoader.gone(animate = true)
+                            showWarning(it.message ?: "Unknown error", false)
+                        }
                     }
                 }
+            } else {
             }
         }
 

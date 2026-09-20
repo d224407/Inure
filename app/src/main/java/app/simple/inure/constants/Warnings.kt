@@ -19,9 +19,7 @@ object Warnings {
     fun gtUnknownAppStateWarning(): String = "Unknown app state detected!"
 
     /**
-     * Invalid unlocker detected
      */
-    fun getInvalidUnlockerWarning(): String = "Invalid unlocker package detected or unlocker integrity has been compromised!"
 
     /**
      * InureWarning05: App integrity failed
@@ -39,9 +37,7 @@ object Warnings {
     fun getNoFileExplorerWarning(): String = "No file explorer app installed on your device"
 
     /**
-     * Unable to verify the integrity of the unlocker package
      */
-    fun getUnableToVerifyUnlockerWarning(): String = "Unable to verify the integrity of the unlocker package"
 
     /**
      * Root service is taking too long to respond

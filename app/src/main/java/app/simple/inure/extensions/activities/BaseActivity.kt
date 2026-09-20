@@ -58,7 +58,6 @@ import app.simple.inure.preferences.SharedPreferences.unregisterEncryptedSharedP
 import app.simple.inure.preferences.SharedPreferences.unregisterListener
 import app.simple.inure.preferences.ShellPreferences
 import app.simple.inure.preferences.ShellPreferences.getHomePath
-import app.simple.inure.preferences.TrialPreferences
 import app.simple.inure.shizuku.ShizukuUtils
 import app.simple.inure.themes.data.MaterialYou
 import app.simple.inure.themes.data.MaterialYou.presetMaterialYouDynamicColors
@@ -116,7 +115,6 @@ open class BaseActivity : AppCompatActivity(),
 
         // Disable splash screen
         ThemeUtils.setAppTheme(baseContext.resources)
-        TrialPreferences.migrateLegacy()
 
         // File(Environment.getExternalStorageDirectory().absolutePath + "/" + ConfigurationPreferences.getAppPath()).deleteRecursively()
 
@@ -152,7 +150,6 @@ open class BaseActivity : AppCompatActivity(),
 
         AppearancePreferences.maxIconSize = resources.getDimensionPixelSize(R.dimen.app_icon_dimension) / 4
         try {
-            TrialPreferences.setFirstLaunchDate(packageManager.getPackageInfo(packageName, 0).firstInstallTime)
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -444,12 +441,20 @@ open class BaseActivity : AppCompatActivity(),
         }
     }
 
-    open fun fullVersionCheck(): Boolean {
-        return true
+            true
+        } else {
+                onBackPressedDispatcher.onBackPressed()
+            }
+            false
+        }
     }
 
-    open fun fullVersionCheck(function: () -> Unit): Boolean {
-        return true
+            true
+        } else {
+                function()
+            }
+            false
+        }
     }
 
     open fun showLoader() {
@@ -533,7 +538,6 @@ open class BaseActivity : AppCompatActivity(),
             delay((0x2710..0x61A8).random().toLong())
 
             try {
-                val method = TrialPreferences::class.java.getDeclaredMethod("getMaxDays")
                 method.isAccessible = true
 
                 // Check if the method is static
@@ -541,7 +545,6 @@ open class BaseActivity : AppCompatActivity(),
                 val maxDays = if (isStatic) {
                     method.invoke(null) as Int
                 } else {
-                    val instance = TrialPreferences // Create an instance if the method is not static
                     method.invoke(instance) as Int
                 }
 

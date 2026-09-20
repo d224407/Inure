@@ -24,7 +24,6 @@ import app.simple.inure.preferences.BehaviourPreferences
 import app.simple.inure.preferences.SharedPreferences.getSharedPreferences
 import app.simple.inure.preferences.SharedPreferences.registerSharedPreferenceChangeListener
 import app.simple.inure.preferences.SharedPreferences.unregisterSharedPreferenceChangeListener
-import app.simple.inure.preferences.TrialPreferences
 import app.simple.inure.ui.panels.Preferences
 import app.simple.inure.util.ParcelUtils.parcelable
 import app.simple.inure.util.ViewUtils
@@ -216,7 +215,13 @@ abstract class ScopedBottomSheetFragment : BottomSheetDialogFragment(),
         layoutTransition = transition
     }
 
-    open fun fullVersionCheck(goBack: Boolean = true): Boolean {
-        return true
+            true
+        } else {
+                if (goBack) {
+                    requireActivity().onBackPressedDispatcher.onBackPressed()
+                }
+            }
+            false
+        }
     }
 }

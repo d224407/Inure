@@ -52,7 +52,6 @@ import app.simple.inure.models.User
 import app.simple.inure.preferences.ConfigurationPreferences
 import app.simple.inure.preferences.DevelopmentPreferences
 import app.simple.inure.preferences.InstallerPreferences
-import app.simple.inure.preferences.TrialPreferences
 import app.simple.inure.preferences.VirusTotalPreferences
 import app.simple.inure.ui.viewers.VirusTotal
 import app.simple.inure.util.AppUtils
@@ -302,10 +301,8 @@ class Installer : ScopedFragment(), InstallerCallbacks {
 
                 viewPager.adapter = AdapterInstallerInfoPanels(this, file, titles.toTypedArray(), packageInfo)
                 tabBar.initWithViewPager(viewPager, titles) { position ->
-                    if (TrialPreferences.isAppFullVersionEnabled()) {
                         Log.i(TAG, "onViewCreated: Tab changed to position $position")
                     } else {
-                        fullVersionCheck {
                             tabBar.shiftToFirstTab(viewPager)
                         }
                     }

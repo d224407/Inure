@@ -9,8 +9,6 @@ import app.simple.inure.apk.utils.PackageUtils.getPackageInfo
 @Suppress("KotlinConstantConditions")
 object AppUtils {
 
-    const val UNLOCKER_PACKAGE_NAME = "app.simple.inureunlocker"
-    const val RECEIVER_PACKAGE_NAME = "$UNLOCKER_PACKAGE_NAME.receivers.LicenceVerificationReceiver"
 
     /** Play Store flavor is intentionally disabled in this Google-free build. */
     fun isPlayFlavor(): Boolean = false
@@ -39,11 +37,8 @@ object AppUtils {
     /**
      * Returns true if the package name is the unlocker package name
      */
-    fun PackageInfo.isUnlocker(): Boolean {
-        return packageName == UNLOCKER_PACKAGE_NAME
     }
 
-    fun PackageInfo.isNewerUnlocker(): Boolean {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             longVersionCode >= 13L
         } else {
@@ -52,7 +47,5 @@ object AppUtils {
         }
     }
 
-    fun Context.isNewerUnlocker(): Boolean {
-        return packageManager.getPackageInfo(UNLOCKER_PACKAGE_NAME)?.isNewerUnlocker() ?: false
     }
 }

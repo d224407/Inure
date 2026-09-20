@@ -557,6 +557,8 @@
     <string name="failed_to_activate_full_version">Tam sürüm etkinleştirilemedi!</string>
     <string name="full_version_already_activated">Tam sürüm zaten etkinleştirilmiş</string>
     <string name="this_feature_is_only_available_in_full_version">Bu özellik yalnızca tam sürümde mevcuttur.</string>
+    <string name="days_trial_period_remaining">Deneme süresinin bitmesine %1$d gün kaldı.</string>
+    <string name="purchase">Satın al</string>
     <string name="recently_added">Son Eklenenler</string>
     <string name="boot_manager">Boot Yöneticisi</string>
     <string name="disable_all">Tümünü Devre Dışı Bırak</string>
@@ -601,6 +603,8 @@
     <string name="dangerous_permission_info">Android\'in sınırlaması nedeniyle, yalnızca tehlikeli izinlerin durumu değiştirilebilir.</string>
     <string name="dont_show_again">Tekrar Gösterme</string>
     <string name="date">Tarih</string>
+    <string name="trial_info">Deneme Bilgileri</string>
+    <string name="desc_trial">Inure App Manager, uygulamaya 15 gün boyunca ücretsiz olarak tam erişim sunar. Bundan sonra bu özelliklerin etkinleştirilmesi için Tam Sürüm gereklidir.</string>
     <string name="use_shizuku">Shizuku Modu</string>
     <string name="shizuku_desc">Bazı işlevleri gerçekleştirmek için yerel Android API\'lerini ve Kütüphanelerini kullanmak yerine Shizuku API\'sini kullanın.\n\nBu seçenek root olmayan kullanıcılar için önerilir.\n\nShizuku erişimi gereklidir.</string>
     <string name="shizuku_alert">Eğer uygulamaya root izni verilip root modu seçilirse root modu Shizuku modu yerine tercih edilecektir.</string>
@@ -777,6 +781,7 @@
     <string name="desc_disable_animations">Uygulama animasyonlarını tamamen devre dışı bırakın.</string>
     <string name="add_vote_desc">Oyunuzu eklemek için düğmeye dokunun.</string>
     <string name="relevance">Alaka</string>
+    <string name="one_time_purchase">Tek seferlik satın alma. Ömür boyu erişim.</string>
     <string name="allow">İzin ver</string>
     <string name="deny">Reddet</string>
     <string name="ignore">Yoksay</string>

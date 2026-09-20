@@ -3,7 +3,6 @@ package app.simple.inure.util
 import java.security.NoSuchAlgorithmException
 import java.security.SecureRandom
 
-object LicenseUtils {
     fun generateNonce(): Int? {
         try {
             // Create a secure random number generator

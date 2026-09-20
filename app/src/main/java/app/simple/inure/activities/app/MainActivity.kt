@@ -29,7 +29,6 @@ import app.simple.inure.preferences.ConfigurationPreferences
 import app.simple.inure.preferences.DevelopmentPreferences
 import app.simple.inure.preferences.MainPreferences
 import app.simple.inure.preferences.MusicPreferences
-import app.simple.inure.preferences.TrialPreferences
 import app.simple.inure.terminal.Term
 import app.simple.inure.themes.manager.Theme
 import app.simple.inure.themes.manager.ThemeManager
@@ -55,7 +54,6 @@ import app.simple.inure.ui.subpanels.TaggedApps
 import app.simple.inure.ui.viewers.AudioPlayer
 import app.simple.inure.util.ActivityUtils.getTopFragment
 import app.simple.inure.util.AppUtils
-import app.simple.inure.util.AppUtils.isNewerUnlocker
 import app.simple.inure.util.ConditionUtils.invert
 import app.simple.inure.util.NullSafety.isNull
 import app.simple.inure.viewmodels.launcher.LauncherViewModel
@@ -99,13 +97,9 @@ class MainActivity : BaseActivity() {
 
         launcherViewModel.getShouldVerify().observe(this@MainActivity) { it ->
             if (it) {
-                if (applicationContext.isNewerUnlocker()) {
                     supportFragmentManager.showLicense()
                 } else {
-                    if (TrialPreferences.isFullVersion().invert()) {
                         kotlin.runCatching {
-                            if (TrialPreferences.setFullVersion(value = true)) {
-                                showWarning(R.string.full_version_activated, goBack = false)
                             }
                         }.getOrElse {
                             it.printStackTrace()
@@ -118,8 +112,6 @@ class MainActivity : BaseActivity() {
         }
 
         launcherViewModel.getWarning().observe(this@MainActivity) {
-            showWarning(Warnings.getInvalidUnlockerWarning(), goBack = false)
-            TrialPreferences.setFullVersion(false)
         }
     }
 
@@ -329,12 +321,7 @@ class MainActivity : BaseActivity() {
                 recreate() // update the language in context wrapper
             }
 
-            TrialPreferences.HAS_LICENSE_KEY -> {
-                if (TrialPreferences.isFullVersion()) {
-                    if (TrialPreferences.isUnlockerVerificationRequired().invert()) {
-                        showWarning(R.string.full_version_activated, goBack = false)
                     } else {
-                        showWarning(R.string.unlocker_not_installed, goBack = false)
                     }
                 }
             }

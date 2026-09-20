@@ -73,7 +73,6 @@ class APKs : ScopedFragment() {
         super.onViewCreated(view, savedInstanceState)
         postponeEnterTransition()
 
-        if (fullVersionCheck()) {
             if (requireContext().checkStoragePermission()) {
                 if (apkBrowserViewModel.shouldShowLoader()) {
                     apkScanner = childFragmentManager.showApkScanner()

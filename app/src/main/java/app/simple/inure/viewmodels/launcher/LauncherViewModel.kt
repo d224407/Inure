@@ -9,9 +9,7 @@ import app.simple.inure.apk.utils.PackageUtils.getPackageInfo
 import app.simple.inure.apk.utils.PackageUtils.isPackageInstalled
 import app.simple.inure.constants.Warnings
 import app.simple.inure.extensions.viewmodels.WrappedViewModel
-import app.simple.inure.preferences.TrialPreferences
 import app.simple.inure.util.AppUtils
-import app.simple.inure.util.AppUtils.isNewerUnlocker
 import app.simple.inure.util.ConditionUtils.invert
 import app.simple.inure.util.FileUtils.toFile
 import kotlinx.coroutines.Dispatchers
@@ -39,12 +37,10 @@ class LauncherViewModel(application: Application) : WrappedViewModel(application
     private fun verifyCertificate() {
         viewModelScope.launch(Dispatchers.Default) {
             kotlin.runCatching {
-                val packageInfo = packageManager.getPackageInfo(AppUtils.UNLOCKER_PACKAGE_NAME)
                 val file = packageInfo?.applicationInfo?.sourceDir?.toFile()
                 val certificates: Array<X509Certificate> = APKCertificateUtils(file, packageInfo!!.packageName, applicationContext()).x509Certificates
                 val fingerPrint = computeFingerPrint(certificates[0].encoded)
 
-                if (packageInfo.isNewerUnlocker()) {
                     if (SHA1.contains(fingerPrint)) { // Signature is valid
                         if (TrialPreferences.getLastVerificationDate() == -1L || TrialPreferences.getLastVerificationDate() < packageInfo.firstInstallTime) {
                             shouldVerify.postValue(true)
@@ -52,13 +48,11 @@ class LauncherViewModel(application: Application) : WrappedViewModel(application
                             shouldVerify.postValue(false)
                         }
                     } else {
-                        postWarning(Warnings.getUnableToVerifyUnlockerWarning())
                     }
                 } else {
                     shouldVerify.postValue(SHA1.contains(fingerPrint))
                 }
             }.getOrElse {
-                postWarning(Warnings.getUnableToVerifyUnlockerWarning())
             }
         }
     }
@@ -87,9 +81,6 @@ class LauncherViewModel(application: Application) : WrappedViewModel(application
 
     fun initCheck() {
         viewModelScope.launch(Dispatchers.Default) {
-            if (TrialPreferences.isFullVersion().invert()) {
-                if (packageManager.isPackageInstalled(AppUtils.UNLOCKER_PACKAGE_NAME)) {
-                    if (TrialPreferences.isUnlockerVerificationRequired()) {
                         verifyCertificate()
                     }
                 }

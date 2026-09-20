@@ -42,7 +42,6 @@ import app.simple.inure.preferences.BehaviourPreferences
 import app.simple.inure.preferences.SharedPreferences.getSharedPreferences
 import app.simple.inure.preferences.SharedPreferences.registerSharedPreferenceChangeListener
 import app.simple.inure.preferences.SharedPreferences.unregisterSharedPreferenceChangeListener
-import app.simple.inure.preferences.TrialPreferences
 import app.simple.inure.ui.panels.AppInfo
 import app.simple.inure.ui.panels.Search
 import app.simple.inure.ui.panels.WebPage
@@ -353,12 +352,23 @@ abstract class ScopedFragment : Fragment(), SharedPreferences.OnSharedPreference
     }
 
     @Suppress("NOTHING_TO_INLINE")
-    fun fullVersionCheck(goBack: Boolean = true): Boolean {
-        return true
+            true
+        } else {
+                if (goBack) {
+                    requireActivity().onBackPressedDispatcher.onBackPressed()
+                }
+            }
+            false
+        }
     }
 
-    open fun fullVersionCheck(onClose: () -> Unit): Boolean {
-        return true
+            true
+        } else {
+                onClose()
+            }
+
+            false
+        }
     }
 
     @Throws(IllegalStateException::class)

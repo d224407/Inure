@@ -560,6 +560,8 @@
     <string name="failed_to_activate_full_version">Не удалось активировать полную версию!</string>
     <string name="full_version_already_activated">Полная версия уже активирована</string>
     <string name="this_feature_is_only_available_in_full_version">Ваш 14-дневный пробный период закончился.\nОбновитесь сейчас, чтобы продолжить использовать все функции приложения.</string>
+    <string name="days_trial_period_remaining">До конца пробного периода осталось %1$d дней.</string>
+    <string name="purchase">Покупка</string>
     <string name="recently_added">Недавно добавленные</string>
     <string name="boot_manager">Управление автозапуском</string>
     <string name="disable_all">Отключить все</string>
@@ -604,6 +606,8 @@
     <string name="dangerous_permission_info">Можно изменить состояние только опасных разрешений.</string>
     <string name="dont_show_again">Больше не показывать</string>
     <string name="date">Дата</string>
+    <string name="trial_info">Информация о пробной версии</string>
+    <string name="desc_trial">Inure App Manager предлагает полный доступ к приложению бесплатно в течение 15 дней. После этого для активации этих функций требуется установка Unlocker.</string>
     <string name="use_shizuku">Использовать Shizuku</string>
     <string name="shizuku_desc">Использовать API Shizuku вместо использования собственных API и библиотек Android, для выполнения некоторых функций.\n\nЭтот вариант рекомендуется для пользователей без root прав.\n\nТребуется Shizuku доступ.</string>
     <string name="shizuku_alert">Если root-доступ предоставлен и в приложении включен режим root, то режим root будет предпочтительнее, чем Shizuku.</string>
@@ -780,6 +784,7 @@
     <string name="desc_disable_animations">Полностью отключить анимацию приложения.</string>
     <string name="add_vote_desc">Нажмите кнопку, чтобы добавить свой голос.</string>
     <string name="relevance">Актуальность</string>
+    <string name="one_time_purchase">Разовая покупка. Пожизненный доступ.</string>
     <string name="allow">Разрешить</string>
     <string name="deny">Запретить</string>
     <string name="ignore">Игнорировать</string>

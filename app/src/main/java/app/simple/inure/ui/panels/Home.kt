@@ -33,7 +33,6 @@ import app.simple.inure.preferences.BehaviourPreferences
 import app.simple.inure.preferences.ConfigurationPreferences
 import app.simple.inure.preferences.HomePreferences
 import app.simple.inure.preferences.MainPreferences
-import app.simple.inure.preferences.TrialPreferences
 import app.simple.inure.terminal.Term
 import app.simple.inure.util.AppUtils
 import app.simple.inure.util.ConditionUtils.invert
@@ -204,6 +203,9 @@ class Home : ScopedFragment() {
 
                         R.string.menus -> {
                             childFragmentManager.showHomeMenu()
+                        }
+
+                            openFragmentSlide(Trial.newInstance(), Trial.TAG)
                         }
                     }
                 }

@@ -56,7 +56,6 @@ class TerminalScreen : ScopedFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         startPostponedEnterTransition()
-        fullVersionCheck()
 
         standaloneApp.isChecked = (requireContext().packageManager
             .getComponentEnabledSetting(ComponentName(requireContext(), TerminalAlias::class.java))

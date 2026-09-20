@@ -258,7 +258,6 @@ public class Term extends BaseActivity implements UpdateCallback,
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        fullVersionCheck(() -> {
             finish();
             Log.i(TAG, "Terminal is closed due to full version check");
             return null;

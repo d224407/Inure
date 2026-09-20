@@ -69,7 +69,6 @@ import app.simple.inure.preferences.AccessibilityPreferences
 import app.simple.inure.preferences.AppInformationPreferences
 import app.simple.inure.preferences.ConfigurationPreferences
 import app.simple.inure.preferences.DevelopmentPreferences
-import app.simple.inure.preferences.TrialPreferences
 import app.simple.inure.preferences.VirusTotalPreferences
 import app.simple.inure.ui.editor.NotesEditor
 import app.simple.inure.ui.subpanels.TaggedApps
@@ -207,7 +206,6 @@ class AppInfo : ScopedFragment() {
                     }
 
                     override fun onAddClicked() {
-                        if (fullVersionCheck(goBack = false)) {
                             childFragmentManager.showAddTagDialog().onTag = {
                                 tagsViewModel.addTag(it, packageInfo) {
                                     this@apply.addTag(it)
@@ -220,7 +218,6 @@ class AppInfo : ScopedFragment() {
         }
 
         if (ConfigurationPreferences.isRootOrShizuku()) {
-            if (TrialPreferences.isAppFullVersionEnabled()) {
                 batteryOptimization.visible(animate = false)
                 divider1.visible(animate = false)
 

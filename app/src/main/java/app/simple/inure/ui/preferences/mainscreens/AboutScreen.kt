@@ -17,7 +17,6 @@ import app.simple.inure.decorations.typeface.TypeFaceTextView
 import app.simple.inure.dialogs.app.Socials.Companion.showSocialsDialog
 import app.simple.inure.dialogs.app.Telegram.Companion.showTelegramDialog
 import app.simple.inure.extensions.fragments.ScopedFragment
-import app.simple.inure.preferences.TrialPreferences
 import app.simple.inure.themes.manager.ThemeManager
 import app.simple.inure.ui.preferences.subscreens.Share
 import app.simple.inure.util.AppUtils
@@ -61,7 +60,13 @@ class AboutScreen : ScopedFragment() {
         startPostponedEnterTransition()
         setAppVersionTag()
 
-        version.append("-full")
+                version.append("-full_unlckr")
+            } else {
+                version.append("-full_grdlkey")
+            }
+        } else {
+            version.append("-trial (${TrialPreferences.getDaysLeft()} days left)")
+        }
 
         credits.setOnClickListener {
             openWebPage(getString(R.string.credits))

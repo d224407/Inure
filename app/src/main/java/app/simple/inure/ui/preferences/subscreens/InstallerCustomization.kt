@@ -30,7 +30,6 @@ class InstallerCustomization : ScopedFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         startPostponedEnterTransition()
-        fullVersionCheck()
 
         if (savedInstanceState.isNull()) {
             viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Default) {

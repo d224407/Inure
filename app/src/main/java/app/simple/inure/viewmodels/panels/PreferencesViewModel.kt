@@ -8,7 +8,7 @@ import app.simple.inure.R
 import app.simple.inure.constants.PreferencesSearchConstants
 import app.simple.inure.extensions.viewmodels.WrappedViewModel
 import app.simple.inure.models.PreferenceModel
-import app.simple.inure.preferences.TrialPreferences
+import app.simple.inure.util.ConditionUtils.invert
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -41,6 +41,9 @@ class PreferencesViewModel(application: Application) : WrappedViewModel(applicat
     private fun loadPreferencesData() {
         viewModelScope.launch(Dispatchers.Default) {
             val list = arrayListOf<Pair<Int, Int>>()
+
+                list.add(Pair(0, 0)) // Divider
+            }
 
             list.add(Pair(R.drawable.ic_appearance, R.string.appearance))
             list.add(Pair(R.drawable.ic_behaviour, R.string.behavior))

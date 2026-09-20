@@ -17,7 +17,6 @@ import app.simple.inure.popups.home.PopupMenuLayout
 import app.simple.inure.preferences.AccessibilityPreferences
 import app.simple.inure.preferences.DevelopmentPreferences
 import app.simple.inure.preferences.HomePreferences
-import app.simple.inure.preferences.TrialPreferences
 import app.simple.inure.util.ArrayUtils.circularGet
 import app.simple.inure.util.ConditionUtils.isZero
 import app.simple.inure.util.RecyclerViewUtils
@@ -85,10 +84,16 @@ class AdapterHome(private val list: List<Pair<Int, Int>>) : RecyclerView.Adapter
                 adapterHomeMenuCallbacks.onMenuItemClicked(list[position].second, holder.icon)
             }
         } else if (holder is Header) {
-            holder.trial.visibility = View.GONE
+                holder.trial.visibility = View.GONE
+            } else {
+                holder.trial.visibility = View.VISIBLE
+            }
 
             holder.appIcon.setOnClickListener {
                 adapterHomeMenuCallbacks.onMenuItemClicked(R.string.app_name, holder.appIcon)
+            }
+
+            holder.trial.setOnClickListener {
             }
 
             holder.search.setOnClickListener {
@@ -135,7 +140,6 @@ class AdapterHome(private val list: List<Pair<Int, Int>>) : RecyclerView.Adapter
 
     inner class Header(itemView: View) : VerticalListViewHolder(itemView) {
         val appIcon: DynamicRippleImageButton = itemView.findViewById(R.id.app_icon)
-        val trial: DynamicRippleImageButton = itemView.findViewById(R.id.home_purchase)
         val search: DynamicRippleImageButton = itemView.findViewById(R.id.search)
         val settings: DynamicRippleImageButton = itemView.findViewById(R.id.settings)
     }
