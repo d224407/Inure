@@ -60,13 +60,6 @@ class AboutScreen : ScopedFragment() {
         startPostponedEnterTransition()
         setAppVersionTag()
 
-                version.append("-full_unlckr")
-            } else {
-                version.append("-full_grdlkey")
-            }
-        } else {
-            version.append("-trial (${TrialPreferences.getDaysLeft()} days left)")
-        }
 
         credits.setOnClickListener {
             openWebPage(getString(R.string.credits))

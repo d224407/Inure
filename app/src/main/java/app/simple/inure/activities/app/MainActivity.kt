@@ -21,7 +21,6 @@ import app.simple.inure.constants.ThemeConstants
 import app.simple.inure.constants.Warnings
 import app.simple.inure.crash.CrashReport
 import app.simple.inure.decorations.theme.ThemeCoordinatorLayout
-import app.simple.inure.dialogs.app.License.Companion.showLicense
 import app.simple.inure.dialogs.batch.BatchExtract.Companion.showBatchExtract
 import app.simple.inure.extensions.activities.BaseActivity
 import app.simple.inure.preferences.AppearancePreferences
@@ -92,22 +91,6 @@ class MainActivity : BaseActivity() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 launcherViewModel.initCheck()
-            }
-        }
-
-        launcherViewModel.getShouldVerify().observe(this@MainActivity) { it ->
-            if (it) {
-                    supportFragmentManager.showLicense()
-                } else {
-                        kotlin.runCatching {
-                            }
-                        }.getOrElse {
-                            it.printStackTrace()
-                        }
-                    }
-                }
-            } else {
-                Log.i("License", "Verification not required")
             }
         }
 
@@ -319,11 +302,6 @@ class MainActivity : BaseActivity() {
 
             ConfigurationPreferences.LANGUAGE -> {
                 recreate() // update the language in context wrapper
-            }
-
-                    } else {
-                    }
-                }
             }
         }
     }

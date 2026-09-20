@@ -57,18 +57,8 @@ object MainPreferences {
         return getSharedPreferences().getLong(FIRST_LAUNCH_DATE, System.currentTimeMillis())
     }
 
-    }
-
-    }
-
     fun removeLegacyPreferences() {
         getSharedPreferences().edit().remove(FIRST_LAUNCH_DATE).apply()
-    }
-
-    fun addLegacyPreferences() {
-        getSharedPreferences().edit().putLong(FIRST_LAUNCH_DATE, TrialPreferences.getFirstLaunchDate()).apply()
-        getSharedPreferences().edit().putBoolean(IS_APP_FULL_VERSION_ENABLED, TrialPreferences.isAppFullVersionEnabled()).apply()
-        TrialPreferences.setLegacyMigrated(value = false)
     }
 
     // ---------------------------------------------------------------------------------------------------------- //

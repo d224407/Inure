@@ -68,11 +68,15 @@ jobs:
       - name: Publish Gradle Build Scan link to summary
         if: always()
         run: |
-          echo "## Gradle Build Scan" >> "$GITHUB_STEP_SUMMARY"
-          grep -Eo 'https://scans\.gradle\.com/s/[a-zA-Z0-9]+' gradle-build.log \
-            | tail -n 1 \
-            | sed 's#^#Scan (public link): #' >> "$GITHUB_STEP_SUMMARY" \
-            || echo "No build scan link found in log." >> "$GITHUB_STEP_SUMMARY"
+          SCAN_URL=$(grep -Eo 'https://scans\.gradle\.com/s/[a-zA-Z0-9]+' gradle-build.log | tail -n 1 || true)
+          {
+            echo "## Gradle Build Scan"
+            if [ -n "$SCAN_URL" ]; then
+              echo "Scan (public link): $SCAN_URL"
+            else
+              echo "No build scan link found in log — it likely was not published (check the tail of gradle-build.log in the uploaded artifact for a 'Publishing build scan' or terms-of-use error near the very end)."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload Gradle build report
         if: always()

@@ -59,7 +59,6 @@ object BackupDataProcessor {
 
     fun Context.exportAppData(): String {
         val paths = mutableListOf<File>()
-        MainPreferences.addLegacyPreferences()
 
         saveSharedPreferencesToFile(this).toFile().let {
             if (it.exists()) {

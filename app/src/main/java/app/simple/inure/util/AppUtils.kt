@@ -33,19 +33,4 @@ object AppUtils {
     fun isDebug(): Boolean {
         return BuildConfig.DEBUG
     }
-
-    /**
-     * Returns true if the package name is the unlocker package name
-     */
-    }
-
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            longVersionCode >= 13L
-        } else {
-            @Suppress("DEPRECATION")
-            versionCode >= 13
-        }
-    }
-
-    }
 }
