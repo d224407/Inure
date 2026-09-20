@@ -44,6 +44,7 @@ class TerminalCommands : ScopedFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        fullVersionCheck()
 
         terminalCommandsViewModel.getTerminalCommands().observe(viewLifecycleOwner) {
             val adapterTerminalCommands = AdapterTerminalCommands(it)

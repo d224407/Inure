@@ -84,16 +84,10 @@ class AdapterHome(private val list: List<Pair<Int, Int>>) : RecyclerView.Adapter
                 adapterHomeMenuCallbacks.onMenuItemClicked(list[position].second, holder.icon)
             }
         } else if (holder is Header) {
-                holder.trial.visibility = View.GONE
-            } else {
-                holder.trial.visibility = View.VISIBLE
-            }
+            holder.trial.visibility = View.GONE
 
             holder.appIcon.setOnClickListener {
                 adapterHomeMenuCallbacks.onMenuItemClicked(R.string.app_name, holder.appIcon)
-            }
-
-            holder.trial.setOnClickListener {
             }
 
             holder.search.setOnClickListener {
@@ -140,6 +134,7 @@ class AdapterHome(private val list: List<Pair<Int, Int>>) : RecyclerView.Adapter
 
     inner class Header(itemView: View) : VerticalListViewHolder(itemView) {
         val appIcon: DynamicRippleImageButton = itemView.findViewById(R.id.app_icon)
+        val trial: DynamicRippleImageButton = itemView.findViewById(R.id.home_purchase)
         val search: DynamicRippleImageButton = itemView.findViewById(R.id.search)
         val settings: DynamicRippleImageButton = itemView.findViewById(R.id.settings)
     }

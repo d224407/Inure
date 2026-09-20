@@ -52,6 +52,7 @@ class ShellScreen : ScopedFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         startPostponedEnterTransition()
+        fullVersionCheck()
 
         useRISH.isChecked = ShellPreferences.isUsingRISH()
         sendMouseEvent.isChecked = ShellPreferences.getMouseEventState()

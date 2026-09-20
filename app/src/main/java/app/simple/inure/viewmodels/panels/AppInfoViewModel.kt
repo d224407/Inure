@@ -253,12 +253,14 @@ class AppInfoViewModel(application: Application, private var packageInfo: Packag
         viewModelScope.launch(Dispatchers.Default) {
             val list = arrayListOf<Pair<Int, Int>>()
 
-                list.add(Pair(R.drawable.ic_downloading, R.string.extract))
-            }
+            list.add(Pair(R.drawable.ic_downloading, R.string.extract))
+
+
+            list.add(Pair(R.drawable.ic_play_store, R.string.play_store))
 
             if (AppUtils.isGithubFlavor() || AppUtils.isBetaFlavor()) {
-                    list.add(Pair(R.drawable.ic_fdroid, R.string.fdroid))
-                }
+                list.add(Pair(R.drawable.ic_fdroid, R.string.fdroid))
+
             }
 
             miscellaneousItems.postValue(list)
@@ -270,8 +272,8 @@ class AppInfoViewModel(application: Application, private var packageInfo: Packag
             add(Pair(R.drawable.ic_launch, R.string.launch))
         }
 
-            add(Pair(R.drawable.ic_send, R.string.send))
-        }
+        add(Pair(R.drawable.ic_send, R.string.send))
+
 
         if (isNotThisApp()) {
             add(Pair(R.drawable.ic_delete, R.string.uninstall))
@@ -312,8 +314,8 @@ class AppInfoViewModel(application: Application, private var packageInfo: Packag
             add(Pair(R.drawable.ic_launch, R.string.launch))
         }
 
-            add(Pair(R.drawable.ic_send, R.string.send))
-        }
+        add(Pair(R.drawable.ic_send, R.string.send))
+
 
         if (isNotThisApp()) {
             add(Pair(R.drawable.ic_delete, R.string.uninstall))
@@ -355,8 +357,8 @@ class AppInfoViewModel(application: Application, private var packageInfo: Packag
                 add(Pair(R.drawable.ic_launch, R.string.launch))
             }
 
-                add(Pair(R.drawable.ic_send, R.string.send))
-            }
+            add(Pair(R.drawable.ic_send, R.string.send))
+
 
             if (isNotThisApp()) {
                 add(Pair(R.drawable.ic_delete, R.string.uninstall))
@@ -366,8 +368,8 @@ class AppInfoViewModel(application: Application, private var packageInfo: Packag
                 add(Pair(R.drawable.ic_launch, R.string.launch))
             }
 
-                add(Pair(R.drawable.ic_send, R.string.send))
-            }
+            add(Pair(R.drawable.ic_send, R.string.send))
+
 
             if (isNotThisApp()) {
                 if (packageInfo.isUpdateInstalled()) {

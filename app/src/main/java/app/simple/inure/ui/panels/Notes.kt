@@ -48,6 +48,7 @@ class Notes : ScopedFragment() {
         super.onViewCreated(view, savedInstanceState)
         postponeEnterTransition()
 
+        fullVersionCheck()
 
         notesViewModel.getNotesData().observe(viewLifecycleOwner) { it ->
             adapterNotes = AdapterNotes(it)

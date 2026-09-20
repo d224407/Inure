@@ -13,6 +13,8 @@ object MainPreferences {
     private const val APP_LANGUAGE = "current_language_locale"
     private const val CHANGE_LOG_REMINDER = "change_log_reminder"
     private const val FIRST_LAUNCH_DATE = "first_launch_date"
+    private const val UNLOCKER_WARNING_COUNT = "unlocker_warning_count"
+    private const val IS_APP_FULL_VERSION_ENABLED = "is_full_version_enabled"
     private const val DISCLAIMER_AGREED = "disclaimer_agreed"
     private const val IS_RATE_REMINDER_SHOWN = "is_rate_reminder_shown_2"
 
@@ -57,8 +59,18 @@ object MainPreferences {
         return getSharedPreferences().getLong(FIRST_LAUNCH_DATE, System.currentTimeMillis())
     }
 
+    fun isFullVersionEnabledLegacy(): Boolean {
+        return getSharedPreferences().getBoolean(IS_APP_FULL_VERSION_ENABLED, false)
+    }
+
+    fun getUnlockerWarningCountLegacy(): Int {
+        return getSharedPreferences().getInt(UNLOCKER_WARNING_COUNT, 0)
+    }
+
     fun removeLegacyPreferences() {
         getSharedPreferences().edit().remove(FIRST_LAUNCH_DATE).apply()
+        getSharedPreferences().edit().remove(IS_APP_FULL_VERSION_ENABLED).apply()
+        getSharedPreferences().edit().remove(UNLOCKER_WARNING_COUNT).apply()
     }
 
     // ---------------------------------------------------------------------------------------------------------- //

@@ -1,17 +1,16 @@
 package app.simple.inure.util
 
-import android.content.Context
-import android.content.pm.PackageInfo
-import android.os.Build
 import app.simple.inure.BuildConfig
-import app.simple.inure.apk.utils.PackageUtils.getPackageInfo
 
 @Suppress("KotlinConstantConditions")
 object AppUtils {
 
-
-    /** Play Store flavor is intentionally disabled in this Google-free build. */
-    fun isPlayFlavor(): Boolean = false
+    /**
+     * Returns true if the flavor is play store
+     */
+    fun isPlayFlavor(): Boolean {
+        return BuildConfig.FLAVOR == "play"
+    }
 
     /**
      * Returns true if the flavor is fdroid or github

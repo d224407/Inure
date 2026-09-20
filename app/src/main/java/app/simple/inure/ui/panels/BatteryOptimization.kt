@@ -42,6 +42,7 @@ class BatteryOptimization : ScopedFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         postponeEnterTransition()
+        fullVersionCheck()
 
         //        if(batteryOptimizationViewModel.isBatteryOptimizationDataEmpty()) {
         //            kotlin.runCatching {

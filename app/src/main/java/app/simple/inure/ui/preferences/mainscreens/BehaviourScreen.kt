@@ -110,11 +110,13 @@ class BehaviourScreen : ScopedFragment() {
         }
 
         transitionType.setOnClickListener {
+            if (fullVersionCheck(goBack = false)) {
                 PopupTransitionType(it)
             }
         }
 
         arcType.setOnClickListener {
+            if (fullVersionCheck(goBack = false)) {
                 PopupArcType(it)
             }
         }

@@ -68,6 +68,7 @@ class VirusTotal : ScopedFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         startPostponedEnterTransition()
+        fullVersionCheck()
 
         setLoaderType()
         shield.setUnfilledColor(ThemeManager.theme.switchViewTheme.switchOffColor)

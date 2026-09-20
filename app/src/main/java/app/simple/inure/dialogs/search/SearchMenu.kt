@@ -72,6 +72,7 @@ class SearchMenu : ScopedBottomSheetFragment() {
 
         deepSearch.setOnSwitchCheckedChangeListener {
             if (it) {
+                if (fullVersionCheck(goBack = false)) {
                     SearchPreferences.setDeepSearch(true)
                 }
             } else {

@@ -14,12 +14,14 @@ import app.simple.inure.util.IntentHelper.openInBrowser
 class Socials : ScopedBottomSheetFragment() {
 
     private lateinit var github: DynamicRippleTextView
+    private lateinit var playStore: DynamicRippleTextView
     private lateinit var close: DynamicRippleTextView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.dialog_socials, container, false)
 
         github = view.findViewById(R.id.github)
+        playStore = view.findViewById(R.id.play_store)
         close = view.findViewById(R.id.close)
 
         return view
@@ -27,6 +29,10 @@ class Socials : ScopedBottomSheetFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        playStore.setOnClickListener {
+            getString(R.string.play_profile_link).asUri().openInBrowser(requireContext())
+        }
 
         github.setOnClickListener {
             getString(R.string.github_profile_link).asUri().openInBrowser(requireContext())

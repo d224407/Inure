@@ -88,6 +88,7 @@ class AccentColor : ScopedFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        fullVersionCheck()
 
         adapterAccentColor.setAccentColorCallbacks(object : AdapterAccentColor.Companion.AccentColorCallbacks {
             override fun onAccentColorPicker() {

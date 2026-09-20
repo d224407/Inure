@@ -357,26 +357,7 @@ class SplashScreen : ScopedFragment() {
     }
 
     private fun unlockStateChecker() {
-        when {
-                    daysLeft.gone()
-                } else {
-                }
-            }
-                when {
-                        Log.d(TAG, "Licence key mode")
-                        daysLeft.gone()
-                    }
-                    else -> {
-                            daysLeft.gone()
-                        } else {
-                        }
-                    }
-                }
-            }
-            else -> {
-                // Should always be 0
-            }
-        }
+        daysLeft.gone()
     }
 
     override fun onResume() {

@@ -127,7 +127,14 @@
                 app:chipSpacingVertical="@dimen/chip_vertical_spacing"
                 app:selectionRequired="false"
                 app:singleSelection="false">
-<app.simple.inure.decorations.views.Chip
+
+                <app.simple.inure.decorations.views.Chip
+                    android:id="@+id/play_store"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/play_store" />
+
+                <app.simple.inure.decorations.views.Chip
                     android:id="@+id/fdroid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
