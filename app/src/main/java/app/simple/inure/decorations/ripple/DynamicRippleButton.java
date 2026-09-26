@@ -8,6 +8,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
+
+import com.google.android.material.button.MaterialButton;
 import app.simple.inure.R;
 import app.simple.inure.constants.Misc;
 import app.simple.inure.decorations.corners.LayoutBackground;
@@ -20,7 +22,7 @@ import app.simple.inure.util.ColorUtils;
  * Use @link{DynamicRippleTextView} since button is extension
  * of it, it works much better than button
  */
-public class DynamicRippleButton extends androidx.appcompat.widget.AppCompatButton {
+public class DynamicRippleButton extends MaterialButton {
     
     private int highlightColor = -1;
     

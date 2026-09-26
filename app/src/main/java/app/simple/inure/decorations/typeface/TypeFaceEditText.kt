@@ -12,7 +12,7 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import androidx.annotation.ColorInt
-import androidx.appcompat.widget.AppCompatEditText
+import com.google.android.material.textfield.TextInputEditText
 import app.simple.inure.R
 import app.simple.inure.preferences.AppearancePreferences
 import app.simple.inure.themes.interfaces.ThemeChangedListener
@@ -26,7 +26,7 @@ import app.simple.inure.util.TypeFace
 import top.defaults.drawabletoolbox.DrawableBuilder
 import java.lang.reflect.Field
 
-open class TypeFaceEditText : AppCompatEditText, ThemeChangedListener {
+open class TypeFaceEditText : TextInputEditText, ThemeChangedListener {
 
     private var typedArray: TypedArray
     private var colorMode: Int = 1
