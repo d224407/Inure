@@ -553,12 +553,8 @@
     <string name="not_optimized">Tidak Dioptimalkan</string>
     <string name="optimize">Optimalisasi</string>
     <string name="dont_optimize">Jangan Optimalisasi</string>
-    <string name="full_version_activated">Versi Lengkap Diaktifkan!</string>
     <string name="failed_to_activate_full_version">Gagal mengaktifkan versi lengkap!</string>
-    <string name="full_version_already_activated">Versi lengkap sudah aktif</string>
     <string name="this_feature_is_only_available_in_full_version">Fitur ini hanya tersedia di versi lengkap.</string>
-    <string name="days_trial_period_remaining">%1$d hari tersisa di masa percobaan.</string>
-    <string name="purchase">Beli</string>
     <string name="recently_added">Baru Ditambahkan</string>
     <string name="boot_manager">Manajer Booting</string>
     <string name="disable_all">Nonaktifkan Semua</string>
@@ -566,8 +562,6 @@
     <string name="would_you_full_version">Anda saat ini menggunakan versi uji coba. Ingin membeli dan membuka fitur lengkap aplikasi ini?</string>
     <string name="zip_is_not_valid">Zip bukan berkas APK terpisah yang valid.</string>
     <string name="invalid_apk_file">Berkas APK tidak valid.</string>
-    <string name="unlocker_not_installed">Gagal mendeteksi paket Unlocker.</string>
-    <string name="full_version_deactivated">Versi lengkap dinonaktifkan</string>
     <string name="sort">Sortir</string>
     <string name="filter">Filter</string>
     <string name="shuffle">Shuffle</string>
@@ -603,7 +597,6 @@
     <string name="dangerous_permission_info">Karena keterbatasan Android, Hanya status izin berbahaya yang dapat diubah.</string>
     <string name="dont_show_again">Jangan Tampilkan Lagi</string>
     <string name="date">Kencan</string>
-    <string name="trial_info">Informasi Uji Coba</string>
     <string name="desc_trial">Inure App Manager menawarkan akses penuh ke aplikasi secara gratis selama 15 hari. Setelah itu, fitur-fitur ini memerlukan Unlocker untuk diaktifkan.</string>
     <string name="use_shizuku">Shizuku Mode</string>
     <string name="shizuku_desc">Gunakan Shizuku API daripada menggunakan API dan Lib Android asli untuk menjalankan beberapa fungsi.\n\nOpsi ini direkomendasikan untuk pengguna non-root.\n\nAkses Shizuku diperlukan.</string>
@@ -704,7 +697,6 @@
     <string name="pending">Tertunda</string>
     <string name="selected_apps">%1$d Terpilih</string>
     <string name="restore">Pulihkan</string>
-    <string name="license_key">Kunci Lisensi</string>
     <string name="verify">Verifikasi</string>
     <string name="licence_verification">Verifikasi Lisensi</string>
     <string name="enter_license_key">Masukkan Kunci Lisensi</string>

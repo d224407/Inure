@@ -555,12 +555,8 @@
     <string name="not_optimized">未优化</string>
     <string name="optimize">优化</string>
     <string name="dont_optimize">取消优化</string>
-    <string name="full_version_activated">完整版已激活!</string>
     <string name="failed_to_activate_full_version">无法激活完整版!</string>
-    <string name="full_version_already_activated">已经激活过完整版</string>
     <string name="this_feature_is_only_available_in_full_version">此功能仅在完整版中可用.</string>
-    <string name="days_trial_period_remaining">试用期还剩 %1$d 天.</string>
-    <string name="purchase">购买</string>
     <string name="recently_added">最近添加</string>
     <string name="boot_manager">Boot Manager</string>
     <string name="disable_all">全部关闭</string>
@@ -568,8 +564,6 @@
     <string name="would_you_full_version">您当前使用的是试用版.您想购买并解锁该应用程序的全部功能吗?</string>
     <string name="zip_is_not_valid">Zip 不是一个有效的拆分apk文件。</string>
     <string name="invalid_apk_file">无效的 APK 文件。</string>
-    <string name="unlocker_not_installed">检测解锁器失败。</string>
-    <string name="full_version_deactivated">完整版已禁用</string>
     <string name="sort">排序</string>
     <string name="filter">过滤器</string>
     <string name="shuffle">Shuffle</string>
@@ -605,7 +599,6 @@
     <string name="dangerous_permission_info">由于Android 的限制，只能更改危险权限的状态</string>
     <string name="dont_show_again">不再显示</string>
     <string name="date">日期</string>
-    <string name="trial_info">试用信息</string>
     <string name="desc_trial">Inure App Manager提供15天免费访问该应用程序的完整权限.到期后,这些功能将需要激活解锁器.</string>
     <string name="use_shizuku">Shizuku 模式</string>
     <string name="shizuku_desc">使用 Shizuku API 而不是使用本机 Android API 和库来执行某些功能.\n\n建议非 root 用户使用此选项.\n\n需要 Shizuku 访问权限.</string>
@@ -706,7 +699,6 @@
     <string name="pending">排队中</string>
     <string name="selected_apps">已选中 %1$d 项</string>
     <string name="restore">恢复</string>
-    <string name="license_key">许可证密钥</string>
     <string name="verify">验证</string>
     <string name="licence_verification">许可证验证</string>
     <string name="enter_license_key">输入授权码</string>

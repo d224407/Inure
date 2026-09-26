@@ -41,7 +41,7 @@ object PermissionUtils {
     }
 
     fun Context.checkRequiredPermissions(): Boolean {
-        return checkForUsageAccessPermission() && checkStoragePermission()
+        return checkStoragePermission()
     }
 
     fun hasPermission(context: Context?, permissionName: String?): Boolean {

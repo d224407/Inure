@@ -553,12 +553,8 @@
     <string name="not_optimized">Niezoptymalizowane</string>
     <string name="optimize">Optymalizuj</string>
     <string name="dont_optimize">Nie optymalizuj</string>
-    <string name="full_version_activated">Pełna wersja aktywowana!</string>
     <string name="failed_to_activate_full_version">Nie udało się aktywować pełnej wersji!</string>
-    <string name="full_version_already_activated">Pełna wersja już aktywna</string>
     <string name="this_feature_is_only_available_in_full_version">Twój 14-dniowy okres próbny dobiegł końca.\nUlepsz teraz, aby nadal korzystać ze wszystkich funkcji aplikacji.</string>
-    <string name="days_trial_period_remaining">Pozostało %1$d dni okresu próbnego.</string>
-    <string name="purchase">Zakup</string>
     <string name="recently_added">Ostatnio dodane</string>
     <string name="boot_manager">Menedżer rozruchu</string>
     <string name="disable_all">Wyłącz wszystkie</string>
@@ -566,8 +562,6 @@
     <string name="would_you_full_version">Obecnie używasz wersji próbnej. Czy chciałbyś kupić i odblokować pełne funkcje aplikacji?</string>
     <string name="zip_is_not_valid">Zip nie jest poprawnym plikiem split apk.</string>
     <string name="invalid_apk_file">Nieprawidłowy plik APK.</string>
-    <string name="unlocker_not_installed">Nie wykryto pakietu odblokowującego (Unlocker).</string>
-    <string name="full_version_deactivated">Pełna wersja dezaktywowana</string>
     <string name="sort">Sortuj</string>
     <string name="filter">Filtruj</string>
     <string name="shuffle">Losowo</string>
@@ -603,7 +597,6 @@
     <string name="dangerous_permission_info">Ze względu na ograniczenia Androida, można zmienić status tylko niebezpiecznych uprawnień.</string>
     <string name="dont_show_again">Nie pokazuj ponownie</string>
     <string name="date">Data</string>
-    <string name="trial_info">Informacje o wersji próbnej</string>
     <string name="desc_trial">Inure App Manager oferuje pełny dostęp do aplikacji za darmo przez 15 dni. Po tym czasie te funkcje będą wymagały aktywacji Unlockera.</string>
     <string name="use_shizuku">Tryb Shizuku</string>
     <string name="shizuku_desc">Użyj API Shizuku zamiast natywnych API Androida i bibliotek do wykonywania niektórych funkcji.\n\nTa opcja jest zalecana dla użytkowników bez roota.\n\nWymagany jest dostęp Shizuku.</string>
@@ -702,7 +695,6 @@
     <string name="pending">Oczekujące</string>
     <string name="selected_apps">%1$d Wybrane</string>
     <string name="restore">Przywróć</string>
-    <string name="license_key">Klucz licencyjny</string>
     <string name="verify">Weryfikuj</string>
     <string name="licence_verification">Weryfikacja licencji</string>
     <string name="enter_license_key">Wprowadź klucz licencyjny</string>

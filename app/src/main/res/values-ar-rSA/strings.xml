@@ -553,12 +553,8 @@
     <string name="not_optimized">غير مُحسّن</string>
     <string name="optimize">تحسين</string>
     <string name="dont_optimize">عدم التحسين</string>
-    <string name="full_version_activated">تم تفعيل النسخة الكاملة!</string>
     <string name="failed_to_activate_full_version">فشل تفعيل النسخة الكاملة!</string>
-    <string name="full_version_already_activated">النسخة الكاملة مفعلة بالفعل</string>
     <string name="this_feature_is_only_available_in_full_version">انتهت الفترة التجريبية.\nقم بالترقية الآن لمواصلة استخدام كافة ميزات التطبيق.</string>
-    <string name="days_trial_period_remaining">متبقي %1$d أيام في الفترة التجريبية.</string>
-    <string name="purchase">شراء</string>
     <string name="recently_added">أُضيف مؤخراً</string>
     <string name="boot_manager">مدير الإقلاع</string>
     <string name="disable_all">تعطيل الكل</string>
@@ -566,8 +562,6 @@
     <string name="would_you_full_version">أنت تستخدم حالياً الإصدار التجريبي. هل ترغب في الشراء وفتح الميزات الكاملة للتطبيق؟</string>
     <string name="zip_is_not_valid">ملف الـ ZIP ليس حزمة APK مقسمة صالحة.</string>
     <string name="invalid_apk_file">ملف APK غير صالح.</string>
-    <string name="unlocker_not_installed">فشل في العثور على حزمة التفعيل.</string>
-    <string name="full_version_deactivated">تم إلغاء تفعيل النسخة الكاملة</string>
     <string name="sort">فرز</string>
     <string name="filter">تصفية</string>
     <string name="shuffle">خلط</string>
@@ -603,7 +597,6 @@
     <string name="dangerous_permission_info">نظراً لقيود أندرويد، لا يمكن تغيير حالة الإذن إلا إذا كان من الأذونات الخطيرة.</string>
     <string name="dont_show_again">لا تظهر هذا مجدداً</string>
     <string name="date">التاريخ</string>
-    <string name="trial_info">معلومات الفترة التجريبية</string>
     <string name="desc_trial">يوفر Inure App Manager وصولاً كاملاً إلى التطبيق مجاناً لمدة 15 يوماً. بعد ذلك ستتطلب هذه الميزات تفعيل حزمة الـ Unlocker.</string>
     <string name="use_shizuku">وضع شيزوكو</string>
     <string name="shizuku_desc">استخدام واجهة برمجة تطبيقات Shizuku بدلاً من استخدام واجهات برمجة تطبيقات ومكتبات أندرويد الأصلية لأداء بعض الوظائف.\n\nيُنصح بهذا الخيار للمستخدمين الذين لا يمتلكون صلاحيات الروت.\n\nيتطلب تفعيل خدمة Shizuku.</string>
@@ -704,7 +697,6 @@
     <string name="pending">قيد الانتظار</string>
     <string name="selected_apps">%1$d محدد</string>
     <string name="restore">استعادة</string>
-    <string name="license_key">مفتاح الترخيص</string>
     <string name="verify">تحقق</string>
     <string name="licence_verification">التحقق من الترخيص</string>
     <string name="enter_license_key">أدخل مفتاح الترخيص</string>

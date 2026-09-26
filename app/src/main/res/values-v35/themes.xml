@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Inure" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Inure" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- This will fix purple status bar issue when app is launched-->
         <item name="colorPrimaryDark">@android:color/transparent</item>
         <item name="colorAppAccent">@color/inure</item>
         <item name="colorAppAccentLight">@color/inure_light</item>
+
+        <item name="colorPrimary">?attr/colorAppAccent</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorPrimaryContainer">?attr/colorAppAccentLight</item>
+        <item name="colorOnPrimaryContainer">@android:color/black</item>
+        <item name="colorSecondary">?attr/colorAppAccent</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="colorTertiary">?attr/colorAppAccentLight</item>
+        <item name="colorOnTertiary">@android:color/black</item>
+
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowAllowEnterTransitionOverlap">true</item>
         <item name="android:windowAllowReturnTransitionOverlap">true</item>

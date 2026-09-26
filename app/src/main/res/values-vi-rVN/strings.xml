@@ -553,12 +553,8 @@
     <string name="not_optimized">Không được tối ưu hóa</string>
     <string name="optimize">Tối ưu hóa</string>
     <string name="dont_optimize">Đừng tối ưu hóa</string>
-    <string name="full_version_activated">Phiên bản đầy đủ được kích hoạt!</string>
     <string name="failed_to_activate_full_version">Không thể kích hoạt phiên bản đầy đủ!</string>
-    <string name="full_version_already_activated">Phiên bản đầy đủ đã được kích hoạt</string>
     <string name="this_feature_is_only_available_in_full_version">Tính năng này chỉ có sẵn trong phiên bản đầy đủ.</string>
-    <string name="days_trial_period_remaining">%1$d Ngày còn lại trong thời gian thử nghiệm.</string>
-    <string name="purchase">Mua</string>
     <string name="recently_added">Gần đây được thêm vào</string>
     <string name="boot_manager">Trình quản lý khởi động</string>
     <string name="disable_all">Tắt tất cả</string>
@@ -566,8 +562,6 @@
     <string name="would_you_full_version">Bạn hiện đang sử dụng phiên bản dùng thử. Bạn có muốn mua và mở khóa các tính năng đầy đủ của ứng dụng không?</string>
     <string name="zip_is_not_valid">ZIP không phải là một tệp APK chia tách hợp lệ.</string>
     <string name="invalid_apk_file">Tệp APK không hợp lệ.</string>
-    <string name="unlocker_not_installed">Không thể phát hiện gói mở khóa.</string>
-    <string name="full_version_deactivated">Phiên bản đầy đủ vô hiệu hóa</string>
     <string name="sort">Loại</string>
     <string name="filter">Lọc</string>
     <string name="shuffle">Xáo trộn</string>
@@ -603,7 +597,6 @@
     <string name="dangerous_permission_info">Do giới hạn của Android, chỉ có thể thay đổi trạng thái cho phép nguy hiểm.</string>
     <string name="dont_show_again">Đừng hiển thị một lần nữa</string>
     <string name="date">Ngày</string>
-    <string name="trial_info">Thông tin dùng thử</string>
     <string name="desc_trial">Trình quản lý ứng dụng Inure cung cấp quyền truy cập đầy đủ vào ứng dụng miễn phí trong 15 ngày. Sau đó, các tính năng này sẽ yêu cầu mở khóa để được kích hoạt.</string>
     <string name="use_shizuku">Chế độ Shizuku</string>
     <string name="shizuku_desc">Sử dụng API Shizuku thay vì sử dụng API Android và LIB gốc để thực hiện một số chức năng. \nnthis được khuyến nghị cho người dùng không root. \nnshizuku truy cập là bắt buộc.</string>
@@ -704,7 +697,6 @@
     <string name="pending">Chưa giải quyết</string>
     <string name="selected_apps">%1$d được chọn</string>
     <string name="restore">Khôi phục</string>
-    <string name="license_key">Khóa cấp phép</string>
     <string name="verify">Xác minh</string>
     <string name="licence_verification">Xác minh giấy phép</string>
     <string name="enter_license_key">Nhập khóa cấp phép</string>

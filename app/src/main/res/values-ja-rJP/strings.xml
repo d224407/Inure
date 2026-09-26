@@ -553,12 +553,8 @@
     <string name="not_optimized">最適化されていない</string>
     <string name="optimize">最適化する</string>
     <string name="dont_optimize">最適化しない</string>
-    <string name="full_version_activated">フルバージョンが有効化されました！</string>
     <string name="failed_to_activate_full_version">フルバージョンの有効化に失敗しました！</string>
-    <string name="full_version_already_activated">フルバージョンは既に有効です</string>
     <string name="this_feature_is_only_available_in_full_version">14日間の試用期間が終了しました。\nすべての機能を使用するにはアップグレードしてください。</string>
-    <string name="days_trial_period_remaining">試用期間は残り %1$d 日です。</string>
-    <string name="purchase">購入</string>
     <string name="recently_added">最近追加</string>
     <string name="boot_manager">ブートマネージャー</string>
     <string name="disable_all">すべて無効化</string>
@@ -566,8 +562,6 @@
     <string name="would_you_full_version">現在試用版を使用しています。購入してフル機能のロックを解除しますか？</string>
     <string name="zip_is_not_valid">Zipは有効な分割apkファイルではありません。</string>
     <string name="invalid_apk_file">無効なAPKファイルです。</string>
-    <string name="unlocker_not_installed">Unlockerパッケージを検出できませんでした。</string>
-    <string name="full_version_deactivated">フルバージョンが無効化されました</string>
     <string name="sort">並び替え</string>
     <string name="filter">フィルター</string>
     <string name="shuffle">シャッフル</string>
@@ -603,7 +597,6 @@
     <string name="dangerous_permission_info">Androidの制限により、Dangerous（危険）な権限のステータスのみ変更可能です。</string>
     <string name="dont_show_again">今後表示しない</string>
     <string name="date">日付</string>
-    <string name="trial_info">試用情報</string>
     <string name="desc_trial">Inure App Managerは15日間無料でフルアクセスを提供します。それ以降、機能を使用するにはUnlockerの有効化が必要です。</string>
     <string name="use_shizuku">Shizukuモード</string>
     <string name="shizuku_desc">いくつかの機能を実行するために、ネイティブAndroid APIやライブラリの代わりにShizuku APIを使用します。\n\n非Rootユーザーに推奨されます。\n\nShizukuのアクセス権限が必要です。</string>
@@ -702,7 +695,6 @@
     <string name="pending">保留中</string>
     <string name="selected_apps">%1$d 選択済み</string>
     <string name="restore">復元</string>
-    <string name="license_key">ライセンスキー</string>
     <string name="verify">確認</string>
     <string name="licence_verification">ライセンス確認</string>
     <string name="enter_license_key">ライセンスキーを入力</string>

@@ -552,12 +552,8 @@
     <string name="not_optimized">Not Optimized</string>
     <string name="optimize">Optimize</string>
     <string name="dont_optimize">Don\'t Optimize</string>
-    <string name="full_version_activated">Full Version Activated!</string>
     <string name="failed_to_activate_full_version">Failed to activate full version!</string>
-    <string name="full_version_already_activated">Full version already activated</string>
     <string name="this_feature_is_only_available_in_full_version">Your 14-day trial has ended.\nUpgrade now to continue using all app features.</string>
-    <string name="days_trial_period_remaining">%1$d days left in trial period.</string>
-    <string name="purchase">Purchase</string>
     <string name="recently_added">Recently Added</string>
     <string name="boot_manager">Boot Manager</string>
     <string name="disable_all">Disable All</string>
@@ -565,8 +561,6 @@
     <string name="would_you_full_version">You\'re currently using trial version. Would you like to purchase and unlock full features of the app?</string>
     <string name="zip_is_not_valid">Zip is not a valid split apk file.</string>
     <string name="invalid_apk_file">Invalid APK file.</string>
-    <string name="unlocker_not_installed">Failed to detect the Unlocker package.</string>
-    <string name="full_version_deactivated">Full version deactivated</string>
     <string name="sort">Sort</string>
     <string name="filter">Filter</string>
     <string name="shuffle">Shuffle</string>
@@ -602,7 +596,6 @@
     <string name="dangerous_permission_info">Due to Android\'s limitation, Only dangerous permission\'s status can be changed.</string>
     <string name="dont_show_again">Don\'t Show Again</string>
     <string name="date">Date</string>
-    <string name="trial_info">Trial Information</string>
     <string name="desc_trial">Inure App Manager offers full access to the app for free for 15 days. After that these features will require Unlocker to be activated.</string>
     <string name="use_shizuku">Shizuku Mode</string>
     <string name="shizuku_desc">Use Shizuku API instead of using native Android APIs and Libs to perform some functions.\n\nThis option is recommended for non-root users.\n\nShizuku access is required.</string>
@@ -703,7 +696,6 @@
     <string name="pending">Pending</string>
     <string name="selected_apps">%1$d Selected</string>
     <string name="restore">Restore</string>
-    <string name="license_key">License Key</string>
     <string name="verify">Verify</string>
     <string name="licence_verification">Licence Verification</string>
     <string name="enter_license_key">Enter License Key</string>

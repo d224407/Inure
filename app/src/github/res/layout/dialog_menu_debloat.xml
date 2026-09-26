@@ -44,7 +44,7 @@
 
                 <app.simple.inure.decorations.views.Button
                     android:id="@+id/recommended"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
 
                 <app.simple.inure.decorations.views.Button
                     android:id="@+id/advanced"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
 
                 <app.simple.inure.decorations.views.Button
                     android:id="@+id/expert"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
 
                 <app.simple.inure.decorations.views.Button
                     android:id="@+id/unsafe"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
 
                 <app.simple.inure.decorations.views.Button
                     android:id="@+id/unlisted"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
